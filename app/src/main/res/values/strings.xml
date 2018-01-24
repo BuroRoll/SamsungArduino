@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Arduino Tutorial</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="book">Учебник</string>
+    <string name="moduls">Модули</string>
+    <string name="control">Управление Arduino</string>
+    <string name="IDE">IDE</string>
+    <string name="bookmark">Интересные проекты</string>>
+    <string name="action_settings">Settings</string>
+    <string name="book1">Данная статья является вводной и будет интересна для общего развития. В ней мы не будем приводить сложные принципиальные схемы, а дадим вам информацию о том какие основные детали установлены на плате Arduino и для чего они нужны. Для примера возьмем свежую модель Arduino UNO R3.</string>>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

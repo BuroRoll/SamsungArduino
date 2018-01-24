@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_book"
+            android:icon="@drawable/book"
+            android:title="@string/book" />
+        <item
+            android:id="@+id/nav_moduls"
+            android:icon="@drawable/moduls"
+            android:title="@string/moduls" />
+        <item
+            android:id="@+id/nav_control"
+            android:icon="@drawable/control"
+            android:title="@string/control" />
+        <item
+            android:id="@+id/nav_ide"
+            android:icon="@drawable/ide"
+            android:title="@string/IDE" />
+        <item
+            android:id="@+id/nav_int_projects"
+            android:icon="@drawable/bookmark"
+            android:title="@string/bookmark"/>
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/chat"
+            android:title="Chat"/>
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
