@@ -16,15 +16,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.buror.samsungproject.Chat.ChatActivity;
 import com.example.buror.samsungproject.fragments.Book1Activity;
 import com.example.buror.samsungproject.fragments.FragmentBook;
+import com.example.buror.samsungproject.fragments.FragmentChat;
 import com.example.buror.samsungproject.fragments.FragmentModuls;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentBook fragbook;
     FragmentModuls fragmoduls;
+    FragmentChat fragchat;
+
     TextView welcome;
+    public Intent chatt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 //        Intent intent = new Intent(MainActivity.this, );
 //        startActivity(intent);
-        
+        fragchat = new FragmentChat();
         fragbook = new FragmentBook();
         fragmoduls = new FragmentModuls();
 
@@ -92,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
         FragmentTransaction ftranse = getFragmentManager().beginTransaction();
 
         if (id == R.id.nav_book) {
@@ -111,15 +117,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             welcome.setText("");
         } else if (id == R.id.nav_chat) {
-
+            ftranse.replace(R.id.container, fragchat);
             welcome.setText("");
+//            chatt = new Intent(MainActivity.this, ChatActivity.class);
         } else if (id == R.id.nav_share) {
 
             welcome.setText("");
         } else if (id == R.id.nav_send) {
 
             welcome.setText("");
-        }ftranse.commit();
+        }
+//        if(chatt != null){
+//            startActivity(chatt);
+//        }else{
+//        }
+        ftranse.commit();
+
         //welcome.setText("");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
