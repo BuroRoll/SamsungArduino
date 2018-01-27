@@ -110,6 +110,7 @@ package com.example.buror.samsungproject.fragments;//package com.example.buror.s
 
 
 import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -118,7 +119,7 @@ import android.widget.Toast;
 
 public class FragmentModuls extends ListFragment {
 
-    String data[] = new String[] { "Модуль того", "Модуль этого ", "2","2","2","2","2","2","2","2","2","2","2" };
+    String data[] = new String[]{"Модуль того", "Модуль этого ", "Модуль 3", "Модуль 4", "Модуль 5", "Модуль 6", "Модуль 7", "Модуль 8"};
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -131,6 +132,10 @@ public class FragmentModuls extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Toast.makeText(getActivity(), "position = " + position, Toast.LENGTH_SHORT).show();
-    }
+        if (position == 0) {
+            Intent myIntent = new Intent(FragmentModuls.this.getActivity(), Book1Activity.class);
+            startActivity(myIntent);
+        }
 
+    }
 }

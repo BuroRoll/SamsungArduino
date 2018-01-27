@@ -120,7 +120,7 @@ import android.widget.ListView;
 
 public class FragmentBook extends ListFragment {
 
-    String data[] = new String[] { "Основы электричества", "Начало работы с Arduino", "1", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1" };
+    String data[] = new String[] { "Основы электричества", "Начало работы с Arduino", "Первые шаги", "Функции","INPUT, OUTPUT","Подключение первых модулей","DigitalWrite, AnalogWrite" };
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {

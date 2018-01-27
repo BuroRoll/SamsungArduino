@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context="com.example.buror.samsungproject.MainActivity">
 
+    <ImageView
+        android:id="@+id/cats"
+        android:layout_width="match_parent"
+        android:layout_height="324dp"
+        app:srcCompat="@drawable/cats"
+        tools:layout_editor_absoluteY="46dp" />
+
+    <ImageView
+        android:id="@+id/lcdWelcome"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/arduino_hello2" />
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +36,10 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include
+        layout="@layout/content_main"
+        app:layout_anchor="@+id/welcome"
+        app:layout_anchorGravity="top|center" />
 
 
     <!--Добавить что-либо на экран при открытии-->
@@ -30,9 +47,28 @@
     <TextView
         android:id="@+id/welcome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="HI"
-        android:gravity="center"/>
+        android:layout_height="123dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="Добро пожаловать в приложение - учебник по Arduino, в котором вы узнаете об основах программирования микроконтроллера, о модулях, которые можно подключить к Arduino, найдёте множество интересных проектов, основанных на данном микроконтроллере, а так же сможете задать интересующие вас вопросы в чате."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/welcome"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center"-->
+        <!--android:text="Добро пожаловать в приложение - учебник по Arduino, в котором вы узнаете об основах программирования микроконтроллера, о модулях, которые можно подключить к Arduino, найдёте множество интересных проектов, основанных на данном микроконтроллере, а так же сможете задать интересующие вас вопросы в чате" />-->
 
     <!--<android.support.design.widget.FloatingActionButton-->
     <!--android:id="@+id/fab"-->

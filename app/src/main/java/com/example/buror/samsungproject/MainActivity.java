@@ -14,12 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.buror.samsungproject.Chat.ChatActivity;
 import com.example.buror.samsungproject.fragments.Book1Activity;
 import com.example.buror.samsungproject.fragments.FragmentBook;
 import com.example.buror.samsungproject.fragments.FragmentChat;
+import com.example.buror.samsungproject.fragments.FragmentControl;
 import com.example.buror.samsungproject.fragments.FragmentModuls;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,18 +29,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentBook fragbook;
     FragmentModuls fragmoduls;
     FragmentChat fragchat;
+    FragmentControl fcontrol;
 
+
+    ImageView cats;
+    ImageView lcdWelcome;
     TextView welcome;
     public Intent chatt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_main);      //activity_main
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -52,8 +59,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragchat = new FragmentChat();
         fragbook = new FragmentBook();
         fragmoduls = new FragmentModuls();
+        fcontrol = new FragmentControl();
 
         welcome = findViewById(R.id.welcome);
+        cats = findViewById(R.id.cats);
+        lcdWelcome =findViewById(R.id.lcdWelcome);
         //welcome = new TextView(this);
 
     }
@@ -103,29 +113,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_book) {
             ftranse.replace(R.id.container, fragbook);
             welcome.setText("");
+            cats.setVisibility(View.GONE);
+            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_moduls) {
             ftranse.replace(R.id.container, fragmoduls);
             welcome.setText("");
-
+            cats.setVisibility(View.GONE);
+            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_control) {
+            ftranse.replace(R.id.container, fcontrol);
 
             welcome.setText("");
+            cats.setVisibility(View.GONE);
+            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_ide) {
 
             welcome.setText("");
+            cats.setVisibility(View.GONE);
+            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_int_projects) {
 
             welcome.setText("");
+            cats.setVisibility(View.GONE);
+            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_chat) {
             ftranse.replace(R.id.container, fragchat);
             welcome.setText("");
+            cats.setVisibility(View.GONE);
+            lcdWelcome.setVisibility(View.GONE);
 //            chatt = new Intent(MainActivity.this, ChatActivity.class);
         } else if (id == R.id.nav_share) {
 
             welcome.setText("");
+            cats.setVisibility(View.GONE);
+            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_send) {
 
             welcome.setText("");
+            cats.setVisibility(View.GONE);
+            lcdWelcome.setVisibility(View.GONE);
         }
 //        if(chatt != null){
 //            startActivity(chatt);
@@ -133,7 +159,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        }
         ftranse.commit();
 
-        //welcome.setText("");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
