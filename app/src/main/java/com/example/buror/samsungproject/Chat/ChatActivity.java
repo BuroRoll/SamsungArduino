@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -59,7 +61,6 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void displayChat() {
-
         ListView listMessages = findViewById(R.id.listView);
         adapter = new FirebaseListAdapter<Message>(this, Message.class, R.layout.item, FirebaseDatabase.getInstance().getReference()) {
             @Override
@@ -69,8 +70,12 @@ public class ChatActivity extends AppCompatActivity {
                 textMessage = v.findViewById(R.id.tvMessage);
                 autor = v.findViewById(R.id.tvUser);
                 timeMessage = v.findViewById(R.id.tvTime);
+                if(model.getTextMessage().equals("Пидор") || model.getTextMessage().equals("пидр") || model.getTextMessage().equals("пидор")  || model.getTextMessage().equals("Хуй") || model.getTextMessage().equals("хуй") || model.getTextMessage().equals("блять") ){
+                    textMessage.setText("(плохое слово)");
+                }else{
+                    textMessage.setText(model.getTextMessage());
+                }
 
-                textMessage.setText(model.getTextMessage());
                 autor.setText(model.getAutor());
                 timeMessage.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimeMessage()));
             }

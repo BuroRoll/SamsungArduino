@@ -23,13 +23,12 @@
             android:label="Chat">
         </activity>
         <activity
-            android:name=".Books_lists.Book1Activity"
+            android:name=".Books_lists.Book0Activity"
             android:label="Начало работы с Arduino">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+        </activity>>
+        <activity
+            android:name=".Items_list.Item0Activity"
+            android:label="Начало работы с Arduino">
         </activity>>
     </application>
 

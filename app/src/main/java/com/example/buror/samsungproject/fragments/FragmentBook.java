@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.buror.samsungproject.Books_lists.Book1Activity;
+import com.example.buror.samsungproject.Books_lists.Book0Activity;
 import com.example.buror.samsungproject.Books_lists.Books;
 import com.example.buror.samsungproject.R;
 
@@ -75,7 +74,7 @@ public class FragmentBook extends Fragment {
      public void onClick(View v) {
          switch(getPosition()){
              case 0:
-                 Intent go0 = new Intent(getActivity(), Book1Activity.class);
+                 Intent go0 = new Intent(getActivity(), Book0Activity.class);
                  startActivity(go0);
                  break;
              case 1:
@@ -87,6 +86,4 @@ public class FragmentBook extends Fragment {
          }
      }
  }
-
-
 }

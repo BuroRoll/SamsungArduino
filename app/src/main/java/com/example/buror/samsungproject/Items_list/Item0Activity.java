@@ -1,4 +1,4 @@
-package com.example.buror.samsungproject.Books_lists;
+package com.example.buror.samsungproject.Items_list;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,18 +8,16 @@ import android.widget.TextView;
 import com.example.buror.samsungproject.R;
 
 /**
- * Created by buror on 24.01.2018.
+ * Created by BuroRoll on 28.03.2018.
  */
-
-public class Book1Activity extends AppCompatActivity {
+public class Item0Activity extends AppCompatActivity {
     TextView textview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.book1);
+        setContentView(R.layout.book0);
         textview = findViewById(R.id.list_e_taskdesc);
         textview.setMovementMethod(new ScrollingMovementMethod());
     }
-
 }
