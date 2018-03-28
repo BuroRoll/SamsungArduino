@@ -70,11 +70,20 @@ public class ChatActivity extends AppCompatActivity {
                 textMessage = v.findViewById(R.id.tvMessage);
                 autor = v.findViewById(R.id.tvUser);
                 timeMessage = v.findViewById(R.id.tvTime);
-                if(model.getTextMessage().equals("Пидор") || model.getTextMessage().equals("пидр") || model.getTextMessage().equals("пидор")  || model.getTextMessage().equals("Хуй") || model.getTextMessage().equals("хуй") || model.getTextMessage().equals("блять") ){
-                    textMessage.setText("(плохое слово)");
-                }else{
-                    textMessage.setText(model.getTextMessage());
-                }
+                String msg = model.getTextMessage();
+
+                String strAfter = msg.replaceAll(
+                        "Пидор", "(плохое слово)").replaceAll("пидор", "(плохое слово)")
+                        .replaceAll("Хуй", "(плохое слово)").replaceAll("хуй", "(плохое слово)")
+                        .replaceAll("Блять", "(плохое слово)").replaceAll("блять", "(плохое слово)")
+                        .replaceAll("Сука", "(плохое слово)").replaceAll("сука", "(плохое слово)")
+                        .replaceAll("Нецензурное слово", "(плохое слово)");
+                textMessage.setText(strAfter);
+//                if(model.getTextMessage().equals("Пидор") || model.getTextMessage().equals("пидр") || model.getTextMessage().equals("пидор")  || model.getTextMessage().equals("Хуй") || model.getTextMessage().equals("хуй") || model.getTextMessage().equals("блять") ){
+//                    textMessage.setText("(плохое слово)");
+//                }else{
+//                    textMessage.setText(model.getTextMessage());
+//                }
 
                 autor.setText(model.getAutor());
                 timeMessage.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimeMessage()));

@@ -16,7 +16,7 @@ public class Item0Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.book0);
+        setContentView(R.layout.item0);
         textview = findViewById(R.id.list_e_taskdesc);
         textview.setMovementMethod(new ScrollingMovementMethod());
     }
