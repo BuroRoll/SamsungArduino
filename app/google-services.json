@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "203152905564",
+    "firebase_url": "https://samsungarduino-59ef4.firebaseio.com",
+    "project_id": "samsungarduino-59ef4",
+    "storage_bucket": "samsungarduino-59ef4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203152905564:android:d5a3e51d7ba93c30",
+        "android_client_info": {
+          "package_name": "com.example.buror.samsungproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203152905564-mrg094ur00ua0ibbot77l1dsmp64q3a3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buror.samsungproject",
+            "certificate_hash": "9dc81af99407d81fae475557979b8b8eaa1b2fe1"
+          }
+        },
+        {
+          "client_id": "203152905564-59fekjhj66hqjlud8hn65eg7jncl81r9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjumHM0Jq4yJJw7sqfdcvc_MwlidgoZAk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203152905564-59fekjhj66hqjlud8hn65eg7jncl81r9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

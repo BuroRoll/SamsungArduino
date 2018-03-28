@@ -23,7 +23,7 @@
             android:label="Chat">
         </activity>
         <activity
-            android:name=".fragments.Book1Activity"
+            android:name=".Books_lists.Book1Activity"
             android:label="Начало работы с Arduino">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->

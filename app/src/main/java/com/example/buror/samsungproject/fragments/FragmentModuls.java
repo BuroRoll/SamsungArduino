@@ -117,6 +117,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.buror.samsungproject.Books_lists.Book1Activity;
+
 public class FragmentModuls extends ListFragment {
 
     String data[] = new String[]{"Модуль того", "Модуль этого ", "Модуль 3", "Модуль 4", "Модуль 5", "Модуль 6", "Модуль 7", "Модуль 8"};

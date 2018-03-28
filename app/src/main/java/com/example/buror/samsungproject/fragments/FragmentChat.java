@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 
 import com.example.buror.samsungproject.Chat.ChatActivity;
-import com.example.buror.samsungproject.Chat.Just;
+
 
 /**
  * Created by buror on 26.01.2018.

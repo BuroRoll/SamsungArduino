@@ -3,9 +3,6 @@ package com.example.buror.samsungproject;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,11 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import com.example.buror.samsungproject.Chat.ChatActivity;
-import com.example.buror.samsungproject.fragments.Book1Activity;
 import com.example.buror.samsungproject.fragments.FragmentBook;
 import com.example.buror.samsungproject.fragments.FragmentChat;
 import com.example.buror.samsungproject.fragments.FragmentControl;
@@ -32,10 +27,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentControl fcontrol;
 
 
-    ImageView cats;
-    ImageView lcdWelcome;
-    TextView welcome;
-    public Intent chatt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,18 +45,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        Intent intent = new Intent(MainActivity.this, );
-//        startActivity(intent);
+
         fragchat = new FragmentChat();
         fragbook = new FragmentBook();
         fragmoduls = new FragmentModuls();
         fcontrol = new FragmentControl();
 
-        welcome = findViewById(R.id.welcome);
-        cats = findViewById(R.id.cats);
-        lcdWelcome =findViewById(R.id.lcdWelcome);
-        //welcome = new TextView(this);
-
+        FragmentTransaction ftranse = getFragmentManager().beginTransaction();
+        ftranse.replace(R.id.container, fragbook);
+        ftranse.commit();
     }
 
     @Override
@@ -112,51 +100,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_book) {
             ftranse.replace(R.id.container, fragbook);
-            welcome.setText("");
-            cats.setVisibility(View.GONE);
-            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_moduls) {
             ftranse.replace(R.id.container, fragmoduls);
-            welcome.setText("");
-            cats.setVisibility(View.GONE);
-            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_control) {
             ftranse.replace(R.id.container, fcontrol);
-
-            welcome.setText("");
-            cats.setVisibility(View.GONE);
-            lcdWelcome.setVisibility(View.GONE);
         } else if (id == R.id.nav_ide) {
 
-            welcome.setText("");
-            cats.setVisibility(View.GONE);
-            lcdWelcome.setVisibility(View.GONE);
+
         } else if (id == R.id.nav_int_projects) {
 
-            welcome.setText("");
-            cats.setVisibility(View.GONE);
-            lcdWelcome.setVisibility(View.GONE);
+
         } else if (id == R.id.nav_chat) {
-            ftranse.replace(R.id.container, fragchat);
-            welcome.setText("");
-            cats.setVisibility(View.GONE);
-            lcdWelcome.setVisibility(View.GONE);
-//            chatt = new Intent(MainActivity.this, ChatActivity.class);
+           Intent intent = new Intent(this, ChatActivity.class);
+           startActivity(intent);
         } else if (id == R.id.nav_share) {
 
-            welcome.setText("");
-            cats.setVisibility(View.GONE);
-            lcdWelcome.setVisibility(View.GONE);
+
         } else if (id == R.id.nav_send) {
 
-            welcome.setText("");
-            cats.setVisibility(View.GONE);
-            lcdWelcome.setVisibility(View.GONE);
+
         }
-//        if(chatt != null){
-//            startActivity(chatt);
-//        }else{
-//        }
         ftranse.commit();
 
 
