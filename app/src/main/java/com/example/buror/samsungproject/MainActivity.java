@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 
 import com.example.buror.samsungproject.Chat.ChatActivity;
+import com.example.buror.samsungproject.IDE.IDEActivity;
 import com.example.buror.samsungproject.fragments.FragmentBook;
 import com.example.buror.samsungproject.fragments.FragmentChat;
 import com.example.buror.samsungproject.fragments.FragmentControl;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentModuls fragmoduls;
     FragmentChat fragchat;
     FragmentControl fcontrol;
+    String te;
 
 
 
@@ -89,6 +91,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        te = "hi";
+    }
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -105,14 +113,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_control) {
             ftranse.replace(R.id.container, fcontrol);
         } else if (id == R.id.nav_ide) {
-
+            Intent intent = new Intent(this, IDEActivity.class);
+            startActivityForResult(intent, 1);
 
         } else if (id == R.id.nav_int_projects) {
 
 
         } else if (id == R.id.nav_chat) {
-           Intent intent = new Intent(this, ChatActivity.class);
-           startActivity(intent);
+            Intent intent = new Intent(this, ChatActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_share) {
 
 

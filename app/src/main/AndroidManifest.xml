@@ -30,6 +30,9 @@
             android:name=".Items_list.Item0Activity"
             android:label="Начало работы с Arduino">
         </activity>>
+        <activity android:name=".IDE.IDEActivity"/>
+        <activity android:name=".IDE.Activity_add"/>
+        <activity android:name=".IDE.Info"/>
     </application>
 
 </manifest>

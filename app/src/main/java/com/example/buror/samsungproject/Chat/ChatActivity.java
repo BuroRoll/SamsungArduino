@@ -79,11 +79,6 @@ public class ChatActivity extends AppCompatActivity {
                         .replaceAll("Сука", "(плохое слово)").replaceAll("сука", "(плохое слово)")
                         .replaceAll("Нецензурное слово", "(плохое слово)");
                 textMessage.setText(strAfter);
-//                if(model.getTextMessage().equals("Пидор") || model.getTextMessage().equals("пидр") || model.getTextMessage().equals("пидор")  || model.getTextMessage().equals("Хуй") || model.getTextMessage().equals("хуй") || model.getTextMessage().equals("блять") ){
-//                    textMessage.setText("(плохое слово)");
-//                }else{
-//                    textMessage.setText(model.getTextMessage());
-//                }
 
                 autor.setText(model.getAutor());
                 timeMessage.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimeMessage()));
