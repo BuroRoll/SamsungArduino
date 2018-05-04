@@ -71,7 +71,13 @@ public class ChatActivity extends AppCompatActivity {
                 autor = v.findViewById(R.id.tvUser);
                 timeMessage = v.findViewById(R.id.tvTime);
                 String msg = model.getTextMessage();
-
+                if(model.getTimeMessage() == 0){
+                    Log.d("Time", String.valueOf(model.getTimeMessage()));
+                }else{
+                    autor.setText(model.getAutor());
+                    textMessage.setText(msg);
+                    timeMessage.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimeMessage()));
+                }
 //                String strAfter = msg.replaceAll(
 //                        "Пидор", "(плохое слово)").replaceAll("пидор", "(плохое слово)")
 //                        .replaceAll("Хуй", "(плохое слово)").replaceAll("хуй", "(плохое слово)")
@@ -79,10 +85,9 @@ public class ChatActivity extends AppCompatActivity {
 //                        .replaceAll("Сука", "(плохое слово)").replaceAll("сука", "(плохое слово)")
 //                        .replaceAll("Нецензурное слово", "(плохое слово)");
 //                textMessage.setText(strAfter);
-                textMessage.setText(msg);
 
-                autor.setText(model.getAutor());
-                timeMessage.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimeMessage()));
+                Log.d("time", String.valueOf(model.getTimeMessage()));
+
             }
         };
         listMessages.setAdapter(adapter);
