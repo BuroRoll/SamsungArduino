@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import com.example.buror.samsungproject.Chat.ChatActivity;
 import com.example.buror.samsungproject.IDE.IDEActivity;
+import com.example.buror.samsungproject.Projects.Fragment1;
 import com.example.buror.samsungproject.fragments.FragmentBook;
 import com.example.buror.samsungproject.fragments.FragmentChat;
 import com.example.buror.samsungproject.fragments.FragmentControl;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentModuls fragmoduls;
     FragmentChat fragchat;
     FragmentControl fcontrol;
+    Fragment1 fragment1;
     String te;
 
 
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragbook = new FragmentBook();
         fragmoduls = new FragmentModuls();
         fcontrol = new FragmentControl();
+        fragment1 = new Fragment1();
 
         FragmentTransaction ftranse = getFragmentManager().beginTransaction();
         ftranse.replace(R.id.container, fragbook);
@@ -117,8 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivityForResult(intent, 1);
 
         } else if (id == R.id.nav_int_projects) {
-
-
+            ftranse.replace(R.id.container, fragment1);
         } else if (id == R.id.nav_chat) {
             Intent intent = new Intent(this, ChatActivity.class);
             startActivity(intent);

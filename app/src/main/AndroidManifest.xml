@@ -33,6 +33,7 @@
         <activity android:name=".IDE.IDEActivity"/>
         <activity android:name=".IDE.Activity_add"/>
         <activity android:name=".IDE.Info"/>
+        <activity android:name=".Projects.Internet"/>
     </application>
 
 </manifest>

@@ -72,13 +72,14 @@ public class ChatActivity extends AppCompatActivity {
                 timeMessage = v.findViewById(R.id.tvTime);
                 String msg = model.getTextMessage();
 
-                String strAfter = msg.replaceAll(
-                        "Пидор", "(плохое слово)").replaceAll("пидор", "(плохое слово)")
-                        .replaceAll("Хуй", "(плохое слово)").replaceAll("хуй", "(плохое слово)")
-                        .replaceAll("Блять", "(плохое слово)").replaceAll("блять", "(плохое слово)")
-                        .replaceAll("Сука", "(плохое слово)").replaceAll("сука", "(плохое слово)")
-                        .replaceAll("Нецензурное слово", "(плохое слово)");
-                textMessage.setText(strAfter);
+//                String strAfter = msg.replaceAll(
+//                        "Пидор", "(плохое слово)").replaceAll("пидор", "(плохое слово)")
+//                        .replaceAll("Хуй", "(плохое слово)").replaceAll("хуй", "(плохое слово)")
+//                        .replaceAll("Блять", "(плохое слово)").replaceAll("блять", "(плохое слово)")
+//                        .replaceAll("Сука", "(плохое слово)").replaceAll("сука", "(плохое слово)")
+//                        .replaceAll("Нецензурное слово", "(плохое слово)");
+//                textMessage.setText(strAfter);
+                textMessage.setText(msg);
 
                 autor.setText(model.getAutor());
                 timeMessage.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimeMessage()));
