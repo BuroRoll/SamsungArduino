@@ -17,10 +17,14 @@ public class Activity_add extends AppCompatActivity{
     String nameAdd, codeAdd;
 
     @Override
-    public void onBackPressed() { //вызов бокового меню
+    public void onBackPressed() {
         Log.d("BACK", "Pressed");
-        Intent intent = new Intent(this, IDEActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent();
+        intent.putExtra("exitAdd", "1");
+        setResult(RESULT_OK, intent);
+        finish();
+//        Intent intent = new Intent(this, IDEActivity.class);
+//        startActivity(intent);
     }
 
     @Override
@@ -45,8 +49,6 @@ public class Activity_add extends AppCompatActivity{
                     intent.putExtra("codeAdd", codeAdd);
                     setResult(RESULT_OK, intent);
                     finish();
-//                    Intent intent = new Intent(Activity_add.this, MainActivity.class);
-//                    startActivity(intent);
                 }
             });
         }catch (Exception e){

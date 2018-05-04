@@ -19,6 +19,8 @@ import com.example.buror.samsungproject.Items_list.Item0Activity;
 import com.example.buror.samsungproject.Items_list.Items;
 import com.example.buror.samsungproject.R;
 
+//TODO: Добавить модули
+
 public class FragmentModuls extends Fragment {
     public FragmentModuls(){}
 

@@ -19,7 +19,7 @@ import com.example.buror.samsungproject.Books_lists.Book0Activity;
 import com.example.buror.samsungproject.Books_lists.Books;
 import com.example.buror.samsungproject.R;
 
-
+//TODO: Добавить кликабельности на страницы
 public class FragmentBook extends Fragment {
     public FragmentBook() {}
 

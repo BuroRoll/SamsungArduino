@@ -17,6 +17,17 @@ public class Info extends AppCompatActivity{
     EditText editName, editCode;
     Code code;
 
+    @Override
+    public void onBackPressed() {
+        Log.d("BACK", "Pressed");
+        Intent intent = new Intent();
+        intent.putExtra("exitInfo", "1");
+        setResult(RESULT_OK, intent);
+        finish();
+//        Intent intent = new Intent(this, IDEActivity.class);
+//        startActivity(intent);
+    }
+
 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

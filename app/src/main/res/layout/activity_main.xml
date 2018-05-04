@@ -8,14 +8,6 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <!--<TextView-->
-        <!--android:id="@+id/welcome"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Добро пожаловать в приложение "-->
-        <!--android:gravity="center"-->
-        <!--android:textSize="50dp"/>-->
-
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
