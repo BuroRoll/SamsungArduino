@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.buror.samsungproject.R;
@@ -16,6 +18,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.hamza.slidingsquaresloaderview.SlidingSquareLoaderView;
+import com.victor.loading.book.BookLoading;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,16 +31,20 @@ public class Fragment1 extends Fragment {
     private RecyclerView recyclerView;
     private List<Projects> result;
     private ProjectAdapter adapter;
-    private TextView noText;
+//    SlidingSquareLoaderView slidingview;
+    BookLoading loading;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment, container, false);
+        loading = view.findViewById(R.id.bookloading);
+        loading.start();
+//        slidingview = view.findViewById(R.id.sliding_view2);
+//        slidingview.start();
         result = new ArrayList<>();
         recyclerView = view.findViewById(R.id.rvProjects);
-        noText = view.findViewById(R.id.noData);
         recyclerView.setHasFixedSize(true);
         database = FirebaseDatabase.getInstance();//получение экземпляра БД
         reference = database.getReference("projects"); //ссылка на ветку проектов
@@ -45,7 +53,6 @@ public class Fragment1 extends Fragment {
         adapter = new ProjectAdapter(result);
         recyclerView.setAdapter(adapter);
         updateList();
-
         return view;
     }
 
@@ -60,6 +67,12 @@ public class Fragment1 extends Fragment {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 result.add(dataSnapshot.getValue(Projects.class));
                 adapter.notifyDataSetChanged();
+//                slidingview.stop();
+//                slidingview.setVisibility(View.INVISIBLE);
+                loading.stop();
+                if(!loading.isStart()){
+                    loading.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
@@ -68,6 +81,12 @@ public class Fragment1 extends Fragment {
                 int index = getItemIndex(projects);
                 result.set(index, projects);
                 adapter.notifyItemChanged(index);
+//                slidingview.stop();
+//                slidingview.setVisibility(View.INVISIBLE);
+                loading.stop();
+                if(!loading.isStart()){
+                    loading.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
@@ -76,6 +95,12 @@ public class Fragment1 extends Fragment {
                 int index = getItemIndex(projects);
                 result.remove(index);
                 adapter.notifyItemRemoved(index);
+//                slidingview.stop();
+//                slidingview.setVisibility(View.INVISIBLE);
+                loading.stop();
+                if(!loading.isStart()){
+                    loading.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
@@ -87,6 +112,7 @@ public class Fragment1 extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
     }
 

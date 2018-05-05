@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Message {
 
-    private String textMessage;
+    private String textMessage = "";
     private String autor;
     private long timeMessage;
 
@@ -20,6 +20,13 @@ public class Message {
     }
 
     public Message() {
+    }
+    public boolean MessageIs(){
+        if(textMessage.isEmpty()){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     public String getTextMessage() {
