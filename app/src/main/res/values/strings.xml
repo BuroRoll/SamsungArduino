@@ -14,6 +14,12 @@
     <string name="linktosite">
         <a href="vk.com">ВКАНТАКТИКЕ</a>
     </string>
+    <string name="feedback_input">Feedback</string>
+    <string name="name_input">Name</string>
+    <string name="email_input">Email</string>
+    <string name="feedback_input_hint">Enter your feedback</string>
+    <string name="name_input_hint">Enter your name</string>
+    <string name="email_input_hint">Enter your email</string>
     <string name="save">Сохранить</string>
     <string name="delite">Удалить</string>
     <!-- TODO: Remove or change this placeholder text -->

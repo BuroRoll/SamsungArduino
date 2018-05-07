@@ -44,6 +44,9 @@
             android:theme="@style/AppTheme.SlidrActivityTheme"/>
         <activity android:name=".Projects.Internet"
             android:theme="@style/AppTheme.SlidrActivityTheme"/>
+        <activity android:name=".FeedBack.FeedBack"
+            android:theme="@style/AppTheme2"/>
+
     </application>
 
 </manifest>

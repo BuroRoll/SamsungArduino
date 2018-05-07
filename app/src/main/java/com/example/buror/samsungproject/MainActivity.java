@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 
 import com.example.buror.samsungproject.Chat.ChatActivity;
+import com.example.buror.samsungproject.FeedBack.FeedBack;
 import com.example.buror.samsungproject.IDE.IDEActivity;
 import com.example.buror.samsungproject.Projects.Fragment1;
 import com.example.buror.samsungproject.fragments.FragmentBook;
@@ -128,8 +129,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         } else if (id == R.id.nav_send) {
-
-
+            Intent intent = new Intent(this, FeedBack.class);
+            startActivity(intent);
         }
         ftranse.commit();
 
