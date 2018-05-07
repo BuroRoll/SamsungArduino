@@ -14,9 +14,7 @@ import com.example.buror.samsungproject.R;
 
 public class FragmentControl extends Fragment {
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.control_frag, container, false);
     }
 }

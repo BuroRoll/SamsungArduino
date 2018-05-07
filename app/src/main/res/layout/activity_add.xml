@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
     android:orientation="vertical">
 
     <EditText
@@ -9,17 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Название" />
-
-    <Button
-        android:id="@+id/addBtn"
+        android:inputType="textImeMultiLine"
+        android:hint="Название"
+        />
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Сохранить" />
+        android:importantForAutofill="yes"/>
 
     <EditText
         android:id="@+id/phon"
+        android:hint="Code"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top|left"

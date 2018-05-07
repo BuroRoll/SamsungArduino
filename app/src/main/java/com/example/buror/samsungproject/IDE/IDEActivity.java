@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.example.buror.samsungproject.MainActivity;
 import com.example.buror.samsungproject.R;
+import com.r0adkll.slidr.Slidr;
 
 import java.util.ArrayList;
 
@@ -56,6 +57,7 @@ public class IDEActivity extends AppCompatActivity {
                 startActivityForResult(intent, key);
             }
         });
+        Slidr.attach(this);
     }
 
     @Override

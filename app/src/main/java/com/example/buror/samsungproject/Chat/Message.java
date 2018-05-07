@@ -1,8 +1,5 @@
 package com.example.buror.samsungproject.Chat;
 
-/**
- * Created by buror on 26.01.2018.
- */
 
 import java.util.Date;
 

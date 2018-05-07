@@ -1,6 +1,5 @@
 package com.example.buror.samsungproject.Chat;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,8 +15,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-
 import com.example.buror.samsungproject.R;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
@@ -25,9 +22,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.r0adkll.slidr.Slidr;
 import com.victor.loading.newton.NewtonCradleLoading;
-
-
 
 
 public class ChatActivity extends AppCompatActivity {
@@ -66,6 +62,7 @@ public class ChatActivity extends AppCompatActivity {
             loading.setLoadingColor(R.color.colorPrimary);
             button.setEnabled(false);
         }
+        Slidr.attach(this);
     }
 
     private void displayChat() {
@@ -76,7 +73,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 TextView textMessage, autor, timeMessage;
                 textMessage = v.findViewById(R.id.tvMessage);
-                autor = v.findViewById(R.id.tvUser);                    //button.setEnabled(false);
+                autor = v.findViewById(R.id.tvUser);
                 timeMessage = v.findViewById(R.id.tvTime);
                 String msg = model.getTextMessage();
 
@@ -86,9 +83,7 @@ public class ChatActivity extends AppCompatActivity {
                         loading.setVisibility(View.INVISIBLE);
                     }
                     button.setEnabled(true);
-                }else{
-
-                }
+                }else{}
 
                 if(model.getTimeMessage() == 0){
                     Log.d("Time", String.valueOf(model.getTimeMessage()));
@@ -96,19 +91,7 @@ public class ChatActivity extends AppCompatActivity {
                     autor.setText(model.getAutor());
                     textMessage.setText(msg);
                     timeMessage.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTimeMessage()));
-//                    slidingview.stop();
-//                    slidingview.setVisibility(View.INVISIBLE);
                 }
-//                String strAfter = msg.replaceAll(
-//                        "Пидор", "(плохое слово)").replaceAll("пидор", "(плохое слово)")
-//                        .replaceAll("Хуй", "(плохое слово)").replaceAll("хуй", "(плохое слово)")
-//                        .replaceAll("Блять", "(плохое слово)").replaceAll("блять", "(плохое слово)")
-//                        .replaceAll("Сука", "(плохое слово)").replaceAll("сука", "(плохое слово)")
-//                        .replaceAll("Нецензурное слово", "(плохое слово)");
-//                textMessage.setText(strAfter);
-
-                Log.d("time", String.valueOf(model.getTimeMessage()));
-
             }
         };
         listMessages.setAdapter(adapter);
@@ -144,10 +127,8 @@ public class ChatActivity extends AppCompatActivity {
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-
                             Snackbar.make(chat_activity, "Выход выполнен", Snackbar.LENGTH_SHORT).show();
                             finish();
-
                         }
                     });
         }

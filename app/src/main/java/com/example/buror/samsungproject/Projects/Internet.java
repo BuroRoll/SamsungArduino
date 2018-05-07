@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.example.buror.samsungproject.R;
+import com.r0adkll.slidr.Slidr;
 
 public class Internet extends AppCompatActivity {
     private WebView mWebView;
@@ -16,9 +17,8 @@ public class Internet extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.internet);
-        Log.d("GOGOGOGOOG", "GOOGOGOG");
         try{
-            mWebView = (WebView) findViewById(R.id.webView);
+            mWebView = findViewById(R.id.webView);
             mWebView.getSettings().setLoadWithOverviewMode(true);
             mWebView.getSettings().setUseWideViewPort(true);
             Intent intent = getIntent();
@@ -27,9 +27,9 @@ public class Internet extends AppCompatActivity {
             mWebView.loadUrl(url);
             mWebView.setWebViewClient(new MyWebViewClient());
         }catch (Exception e){
-            Log.d("ERRORRRRR", e.getMessage());
+            Log.d("Some Error", e.getMessage());
         }
-
+        Slidr.attach(this);
     }
 
     private class MyWebViewClient extends WebViewClient

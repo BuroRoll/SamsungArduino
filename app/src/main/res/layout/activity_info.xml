@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/cardview_light_background">
+
 
     <EditText
         android:id="@+id/editName"
@@ -12,20 +14,17 @@
         android:inputType="textPersonName"
         android:text="Name" />
 
-    <Button
-        android:id="@+id/change"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Сохранить изменения" />
 
-    <Button
-        android:id="@+id/delite_btn"
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Удалить" />
+        android:importantForAutofill="yes"/>
 
     <EditText
         android:id="@+id/editCode"
+        android:hint="Code"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top|left"
