@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.buror.samsungproject.R;
+import com.r0adkll.slidr.Slidr;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,11 +52,11 @@ public class FeedBack extends AppCompatActivity {
                     }
                 }
         );
+        Slidr.attach(this);
     }
 
 
     private boolean validateInput() { // Validate text input
-
         if (feedbackInputField.getText().toString().trim().length() == 0 && nameInputField.getText().toString().trim().length() == 0 && emailInputField.getText().toString().trim().length() == 0) {
             feedbackInputField.setError("Enter your feedback!");
             nameInputField.setError("Enter a valid name!");
@@ -83,17 +84,14 @@ public class FeedBack extends AppCompatActivity {
         feedbackCall.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                Log.d("XXX", "Submitted. " + response);
                 Toast.makeText(FeedBack.this,"Your feedback was submitted!",Toast.LENGTH_LONG).show();
                 // Clear all fields after submitting
                 feedbackInputField.setText("");
                 nameInputField.setText("");
                 emailInputField.setText("");
             }
-
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Log.e("XXX", "Failed", t);
                 Toast.makeText(FeedBack.this,"There was an error!",Toast.LENGTH_LONG).show();
             }
         });

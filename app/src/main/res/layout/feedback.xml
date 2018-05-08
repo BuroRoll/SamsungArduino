@@ -62,39 +62,23 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/feedback_input" />
+                    android:text="@string/feedback_input"
+                    />
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="16dp" />
 
-                <!--<android.support.design.widget.TextInputLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content">-->
 
-                    <!--<EditText-->
-                        <!--android:id="@+id/feedback_input"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:hint="@string/feedback_input_hint"-->
-                        <!--android:inputType="textMultiLine" />-->
-                <!--</android.support.design.widget.TextInputLayout>-->
 
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/signup_input_layout_name"
+                <EditText
+                    android:id="@+id/feedback_input"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp">
+                    android:layout_height="match_parent"
+                    android:hint="@string/feedback_input_hint"
+                    android:inputType="textMultiLine"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
 
-                    <EditText
-                        android:id="@+id/feedback_input"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textMultiLine"
-                        android:hint="FeedBack"/>
-                </android.support.design.widget.TextInputLayout>
 
                 <Space
                     android:layout_width="match_parent"
@@ -109,17 +93,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="16dp" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <EditText
-                        android:id="@+id/name_input"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/name_input_hint"
-                        android:inputType="textPersonName" />
-                </android.support.design.widget.TextInputLayout>
+
+                <EditText
+                    android:id="@+id/name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name_input_hint"
+                    android:inputType="textPersonName"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+
 
                 <Space
                     android:layout_width="match_parent"
@@ -128,23 +111,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/email_input" />
+                    android:text="@string/email_input"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="16dp" />
 
-                <android.support.design.widget.TextInputLayout
+                <EditText
+                    android:id="@+id/email_input"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/email_input"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/email_input_hint"
-                        android:inputType="textEmailAddress" />
-                </android.support.design.widget.TextInputLayout>
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_input_hint"
+                    android:inputType="textEmailAddress"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -152,15 +132,16 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/submit_button"
-        android:src="@drawable/ic_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
-        app:fabSize="normal"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_send"
+        app:backgroundTint="@color/colorPrimary"
         app:elevation="6dp"
-        app:pressedTranslationZ="12dp"
+        app:fabSize="normal"
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|end"
-        android:backgroundTint="@color/colorPrimary"/>
+        app:pressedTranslationZ="12dp" />
 
 </android.support.design.widget.CoordinatorLayout>

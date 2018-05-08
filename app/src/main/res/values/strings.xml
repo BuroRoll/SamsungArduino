@@ -14,6 +14,7 @@
     <string name="linktosite">
         <a href="vk.com">ВКАНТАКТИКЕ</a>
     </string>
+    <string name="chat">Чат</string>
     <string name="feedback_input">Feedback</string>
     <string name="name_input">Name</string>
     <string name="email_input">Email</string>

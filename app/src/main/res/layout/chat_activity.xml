@@ -45,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:hint="Сообщение" />
+            android:hint="Сообщение"
+            android:textCursorDrawable="@drawable/color_cursor"/>
 
         <Button
             android:id="@+id/button2"

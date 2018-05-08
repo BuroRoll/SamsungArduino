@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.buror.samsungproject.MainActivity">
 
-    <!--<ImageView-->
-        <!--android:id="@+id/cats"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="324dp"-->
-        <!--app:srcCompat="@drawable/cats"-->
-        <!--tools:layout_editor_absoluteY="46dp" />-->
-
-    <!--<ImageView-->
-        <!--android:id="@+id/lcdWelcome"-->
-        <!--android:layout_gravity="bottom"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:srcCompat="@drawable/arduino_hello2" />-->
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
