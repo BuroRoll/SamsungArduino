@@ -1,6 +1,7 @@
 package com.example.buror.samsungproject;
 
 import android.app.FragmentTransaction;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -115,19 +117,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_moduls) {
             ftranse.replace(R.id.container, fragmoduls);
         } else if (id == R.id.nav_control) {
+            BluetoothAdapter bluetooth= BluetoothAdapter.getDefaultAdapter();
+            if (bluetooth.isEnabled()) {
+                // Bluetooth включен. Работаем.
+            }
+            else
+            {
+                // Bluetooth выключен. Предложим пользователю включить его.
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, 1);
+            }
             ftranse.replace(R.id.container, fcontrol);
         } else if (id == R.id.nav_ide) {
             Intent intent = new Intent(this, IDEActivity.class);
             startActivityForResult(intent, 1);
-
         } else if (id == R.id.nav_int_projects) {
             ftranse.replace(R.id.container, fragment1);
         } else if (id == R.id.nav_chat) {
             Intent intent = new Intent(this, ChatActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_share) {
-
-
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(this, FeedBack.class);
             startActivity(intent);
