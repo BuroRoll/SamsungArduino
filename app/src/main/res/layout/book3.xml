@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Переменные"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Переменная – это место хранения данных. Она имеет имя, значение и тип. Например, данное объявление:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="int pin = 13;"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="создает переменную с именем pin, значением 13 и типом int.   Затем в программе имеется возможность обратиться к данной переменной через имя с целью работы с ее значением. Например, в утверждении:"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="pinMode(pin, OUTPUT);"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="имеется значение вывода (13), которое будет передаваться в функцию pinMode(). В данном случае нет необходимости использовать переменную. Утверждение может работать и в таком виде: "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="pinMode(13, OUTPUT);"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Преимущество переменной заключается в том, что необходимо определить значение вывода однажды и потом использовать его многократно. В последствии при изменении вывода 13 на 12 достаточно будет поменять только одну строку в программном коде. Также можно использовать специальные имена для подчеркивания значения переменной (напр., программа, управляющая светодиодом RGB, может содержать переменные redPin, greenPin и bluePin)."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Переменные имеют другие преимущества перед такими значениями как число. Имеется возможность изменить значение переменной, используя присвоение. Например:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="pin = 12;"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="изменит значение переменной на число 12. В данном примере не определяется тип переменной, т.к. он не меняется операцией присвоения. Имя переменной постоянно связано с типом, меняется только значение. [1] Перед присвоением значения необходимо декларировать переменную. Присвоение значения переменной без ее декларации вызовет следующее сообщение: error: pin was not declared in this scope"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="При присвоении одной переменной другой происходит копирование значения первой переменной во вторую. Изменение значение одной переменной не влияет на другую. Например, после записи:"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="int pin = 13;
+\nint pin2 = pin;
+\npin = 12;
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="только pin имеет значение 12, а pin2 еще равен 13."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Что означает слово \'scope\' в сообщение об ошибке, приведенной выше? Оно относится к части программы, в которой переменная может использоваться - областе видимости. Область видимости определяется местом ее декларации. Например, имеется возможность использовать переменную во всей программе, если задекларировать ее в начале программного кода. Такие переменные называются глобальными. Например:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="int pin = 13;
+\nvoid setup()
+\n{
+\n  pinMode(pin, OUTPUT);
+\n}
+\n
+\nvoid loop()
+\n{
+\n  digitalWrite(pin, HIGH);
+\n}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Из примера видно, что pin используется в обеих функциях setup() и loop().   Обе функции ссылаются на одну переменную, таким образом, изменение ее значения в одной функции повлияет на значение в другой: "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="int pin = 13;
+\nvoid setup()
+\n{
+\n  pin = 12;
+\n  pinMode(pin, OUTPUT);
+\n}
+\n
+\nvoid loop()
+\n{
+\n  digitalWrite(pin, HIGH);
+\n}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Функции digitalWrite(), вызываемой из loop(), будет передано значение 12, т.к. оно было присвоено переменной в функции setup(). "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Если переменная используется только один раз в функции, то ее декларируют в данной части программного кода, ограниченной скобками функции. Например:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="void setup()
+\n{
+\n  int pin = 13;
+\n  pinMode(pin, OUTPUT);
+\n  digitalWrite(pin, HIGH);
+\n}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="В данном примере переменная может использоваться только внутри функции setup(). При написании данного кода:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="void loop()
+\n{
+\n  digitalWrite(pin, LOW); // wrong: pin is not in scope here.
+\n}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="будет выведено сообщение: «error: 'pin' was not declared in this scope». Данное сообщение будет выводиться, даже если вы задекларировали переменную где-то в программе, но пытаетесь ее использовать вне области видимости.
+
+\nПочему не сделать все переменные глобальными? Если неизвестно где будет еще использоваться переменная, то почему ее надо ограничивать одной функцией? Когда переменная ограничена легче найти источник ее изменения. Если переменная глобальная, то ее значение может быть изменено в любом месте программного кода, что означает необходимость проследить ее изменение по всей программе. Например, когда переменная имеет некорректное значение, то гораздо легче найти причину если область видимости ограничена."/>
+
+
+    </LinearLayout>
+
+</ScrollView>

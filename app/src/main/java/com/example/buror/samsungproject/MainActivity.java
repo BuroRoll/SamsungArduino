@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentChat fragchat;
     FragmentControl fcontrol;
     Fragment1 fragment1;
+    IDEActivity fide;
     String te;
     Context context;
 
@@ -45,15 +46,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        Bluetooth bluetooth = new Bluetooth(this);
-//        Log.d("Blurtooth", "onCreate: "+ String.valueOf(bluetooth));
-////        Log.d("Blurtooth", "onCreate: "+ String.valueOf());
-//            bluetooth.enable();
-////            if(bluetooth.isEnabled()){
-//                Log.d("Bluetooth", "onCreate: БЛЮТУЗ ВКЛЮЧЕН");
-//  //          }else{
-//                Log.d("Bluetooth", "onCreate: НЕ ВКЛЮЧИЛСЯ");
-//    //        }
         BluetoothAdapter bluetooth= BluetoothAdapter.getDefaultAdapter();
 
         if (bluetooth.isEnabled()) {
@@ -82,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmoduls = new FragmentModuls();
         fcontrol = new FragmentControl();
         fragment1 = new Fragment1();
+        fide = new IDEActivity();
 
         FragmentTransaction ftranse = getFragmentManager().beginTransaction();
         ftranse.replace(R.id.container, fragbook);
@@ -90,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -100,7 +93,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
 
@@ -159,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_ide) {
             Intent intent = new Intent(this, IDEActivity.class);
             startActivityForResult(intent, 1);
+//            ftranse.replace(R.id.container, fide);
         } else if (id == R.id.nav_int_projects) {
             ftranse.replace(R.id.container, fragment1);
         } else if (id == R.id.nav_chat) {

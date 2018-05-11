@@ -74,14 +74,24 @@ public class FragmentBook extends Fragment {
      public void onClick(View v) {
          switch(getPosition()){
              case 0:
-                 Intent go0 = new Intent(getActivity(), Book0Activity.class);
-                 startActivity(go0);
+                 Intent intent = new Intent(getActivity(), Book0Activity.class);
+                 intent.putExtra("key","zero");
+                 startActivity(intent);
                  break;
              case 1:
-                 Toast.makeText(getActivity(), String.valueOf(getPosition()), Toast.LENGTH_SHORT).show();
+                 Intent intent1 = new Intent(getActivity(), Book0Activity.class);
+                 intent1.putExtra("key","one");
+                 startActivity(intent1);
                  break;
              case 2:
-                 Toast.makeText(getActivity(), String.valueOf(getPosition()), Toast.LENGTH_SHORT).show();
+                 Intent intent2 = new Intent(getActivity(), Book0Activity.class);
+                 intent2.putExtra("key","two");
+                 startActivity(intent2);
+                 break;
+             case 3:
+                 Intent intent3 = new Intent(getActivity(), Book0Activity.class);
+                 intent3.putExtra("key","three");
+                 startActivity(intent3);
                  break;
          }
      }

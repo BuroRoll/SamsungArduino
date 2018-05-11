@@ -48,6 +48,7 @@
             android:theme="@style/AppTheme.SlidrActivityTheme"/>
         <activity android:name=".FeedBack.FeedBack"
             android:theme="@style/AppTheme2"/>
+        <activity android:name=".IDE.Helper"/>
 
     </application>
 

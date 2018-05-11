@@ -1,6 +1,6 @@
 package com.example.buror.samsungproject.FeedBack;
 
-import android.app.Application;
+
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -56,7 +56,7 @@ public class FeedBack extends AppCompatActivity {
     }
 
 
-    private boolean validateInput() { // Validate text input
+    private boolean validateInput() {
         if (feedbackInputField.getText().toString().trim().length() == 0 && nameInputField.getText().toString().trim().length() == 0 && emailInputField.getText().toString().trim().length() == 0) {
             feedbackInputField.setError("Введите отзыв");
             nameInputField.setError("Введите ваше имя");
@@ -69,10 +69,10 @@ public class FeedBack extends AppCompatActivity {
         }
     }
 
-    private void sendData() { // Send feedback to Google Spreadsheet if text input is valid
+    private void sendData() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://docs.google.com/forms/d/e/") // Your spreadsheet URL
+                .baseUrl("https://docs.google.com/forms/d/e/")
                 .build();
         final SpreadsheetWebService spreadsheetWebService = retrofit.create(SpreadsheetWebService.class);
 

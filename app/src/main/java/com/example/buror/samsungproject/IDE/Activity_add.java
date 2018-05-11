@@ -47,7 +47,7 @@ public class Activity_add extends AppCompatActivity{
                 return true;
         }
 
-            return true;
+        return true;
     }
 
     @Override
@@ -68,4 +68,3 @@ public class Activity_add extends AppCompatActivity{
         addCode = findViewById(R.id.phon);
     }
 }
-

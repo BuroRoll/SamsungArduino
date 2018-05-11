@@ -10,7 +10,174 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Основы Электричества"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:text="В данной статье будут рассмотрены основные понятия и законы электричества"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Ток"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ток - направленное, упорядоченное движение заряженных частиц.
+\nЕсли провести аналогию для тока, то его можно сравнить с водой. Она также течёт по трубе(проводнику). Это не самое точное сравнение, но для понимания подходит.
+\nТок, как и вода, не будет двигаться по проводнику(течь по трубе), если не имеется потебителя этого тока
+\nТо есть если воде в трубе некуда течь, скажем, стоит заглушка, то не будет и течения.
+\nТакже, если к батарейке подключить два провода, а провода ни к чему не подключать, то не будет движения электронов(тока)"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Сила Тока"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сила тока - количестов тока, проходящее через поперечное сечение проводника за определённый отвезок времени.
+\nВ аналогии, это можно сравнить с течением воды(массы воды, что течёт по трубе)
+\nДля его измерения, берём поперечное сечение трубы, и замеряем количество воды, которое пройдёт по этому участку за 1 единицу времени(1 секунда)
+\nСила тока измеряется в Амперах[A]"/>
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Формула ниже:
+\n[I] - Сила тока
+\n[q] - Ток
+\n[t] - Время"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/silatoka"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Напряжение(Разность Потенциалов)"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Представим две ёмкости с водой, соединенные трубкой. Одна ёмкость находится выше другой.
+\nИменно разность уровня воды(перепад высот) - можно назвать напряжением.
+\nЕсли налить воды в верхнюю ёмкость, то вода будет течь вниз(логично), и та сила, которая тянет воду в сосуд ниже и называется напряжением(или её можно назвать разностью потенциалов(как разность высот))"/>
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Формула ниже:
+\n[U] - Напряжение
+\n[A] - Работа по перемещению заряда
+\n[q] - Ток"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/napryazhenie"/>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/napryazhenie2"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Сопротивление"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Исходя из этого, сопротивление проводника – это физическая величина, которая характеризует свойство проводника препятствовать проводить электрический ток. Более простыми словами это величина, которая мешает проводить электрический ток.
+\nСопротивление проводника зависит от самого проводника(то из чего он сделан), от его длинны и поперечного сечения(диаметра проводника)"/>
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Формула ниже:
+\n[R] - Сопротивление
+\n[p] - Удельное сопротивление проводника(табличное значение)
+\n[l] - Длинна проводника
+\n[S] - Площадь поперечного сечения проводника"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:src="@drawable/soprotivlenie"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Закон Ома(один из главных законов электричества)"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Закон Ома соединяет основные поняти электричества.
+\nОн объединяет в себе силу тока, напряжение и сопротивление
+\nИз данного закона можно понять, что сила тока прямопропорциональна напряжению(чем больше напряжение, тем больше сила тока) и обратно пропорционально сопротивлению(чем больше сопротивление, тем меньше сила тока)"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/zaconoma"/>
 
         <TextView
             android:id="@+id/text2"
@@ -34,20 +201,6 @@
             android:textColorLink="@android:color/holo_blue_dark"/>
 
 
-        <ImageView
-            android:id="@+id/om"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/linktosite"
-            android:autoLink="all"
-            android:clickable="true"
-            android:textColorLink="@android:color/holo_blue_dark"
-            />
 
     </LinearLayout>
 

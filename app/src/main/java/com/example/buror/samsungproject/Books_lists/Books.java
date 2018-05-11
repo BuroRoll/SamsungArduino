@@ -10,5 +10,7 @@ public class Books {
     public static String[] title = new String[]{
             "Основы электричества",
             "Первые шаги в мир Arduino",
+            "Структура программы на языке C++ для Arduino",
+            "Переменные"
     };
 }

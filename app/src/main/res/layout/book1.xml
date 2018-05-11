@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Первые шаги в мир Arduino"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Установка IDE"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Качаем и устанавливаем Arduino IDE с сайта разработчика (основная программа для работы с Arduino. В ней пишутся скетчи, в ней же компилируются и загружаются в плату). При скачивании можно отказаться от пожертвования, нажав JUST DOWNLOAD (только скачать). При установке Arduio IDE должны автоматически установиться драйвера, то есть при появлении окошка «согласиться ли на установку драйверов» нажать да."/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/downloadide"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IDE Готова к использованию"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ideready"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Полезные советы при работе с Arduino"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="\n1. Автоформатирование — Arduino IDE умеет автоматически приводить ваш код в порядок (имеются в виду отступы, переносы строк и пробелы). Для автоматического форматирования используйте комбинацию CTRL+T на клавиатуре, либо Инструменты/АвтоФорматирование в окне IDE. Используйте чаще, чтобы сделать код красивым (каноничным, классическим) и более читаемым для других!"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="\n2. Скрытие частей кода — сворачивайте длинные функции и прочие куски кода для экономии места и времени на скроллинг. Включается здесь: Файл/Настройки/Включить сворачивание кода"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="\n3. Не используйте мышку! Чем выше становится ваш навык в программировании, тем меньше вы будете использовать мышку (да-да, как в фильмах про хакеров). Используйте обе руки для написания кода и перемещения по нему, вот вам несколько полезных комбинаций и хаков, которыми я пользуюсь ПОСТОЯННО:"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="\nCtrl+← , Ctrl+→ — переместить курсор влево/вправо НА ОДНО СЛОВО
+\n•Home , End — переместить курсор в начало/конец строки
+\n•Shift+← , Shift+→ — выделить символ слева/справа от курсора
+\n•Shift+Ctrl+← , Shift+Ctrl+→ — выделить слово слева/справа от курсора
+\n•Shift+Home , Shift+End — выделить все символы от текущего положения курсора до начала/конца строки
+\n•Ctrl+Z — отменить последнее действие
+\n•Ctrl+U — загрузить прошивку в Arduino
+\n•Ctrl+R — скомпилировать (проверить)
+\n•Ctrl+Shift+M — открыть монитор порта"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

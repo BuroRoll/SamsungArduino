@@ -6,4 +6,5 @@
     <color name="book_loading_background">#ffffff</color>
     <color name="book_loading_book">#4c00a9</color>
     <color name="book_loading_page">#4c00a9</color>
+    <color name="blue">#5067fa</color>
 </resources>
