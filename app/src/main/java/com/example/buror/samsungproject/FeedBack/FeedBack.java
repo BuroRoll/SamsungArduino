@@ -32,7 +32,7 @@ public class FeedBack extends AppCompatActivity {
         setContentView(R.layout.feedback);
 
         collapsingToolbar =  findViewById(R.id.collapsing);
-        collapsingToolbar.setTitle("Your Feedback");
+        collapsingToolbar.setTitle("Ваш отзыв");
 
         toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,10 +58,10 @@ public class FeedBack extends AppCompatActivity {
 
     private boolean validateInput() { // Validate text input
         if (feedbackInputField.getText().toString().trim().length() == 0 && nameInputField.getText().toString().trim().length() == 0 && emailInputField.getText().toString().trim().length() == 0) {
-            feedbackInputField.setError("Enter your feedback!");
-            nameInputField.setError("Enter a valid name!");
-            emailInputField.setError("Enter a valid email!");
-            Toast.makeText(FeedBack.this, "Please fill in the required fields!", Toast.LENGTH_LONG).show();
+            feedbackInputField.setError("Введите отзыв");
+            nameInputField.setError("Введите ваше имя");
+            emailInputField.setError("Введите вашу почту");
+            Toast.makeText(FeedBack.this, "Пожалуйста, заполните все пунктынщгк", Toast.LENGTH_LONG).show();
             return false;
         } else {
             sendData();

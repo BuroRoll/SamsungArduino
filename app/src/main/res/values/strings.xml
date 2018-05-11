@@ -15,9 +15,9 @@
         <a href="vk.com">ВКАНТАКТИКЕ</a>
     </string>
     <string name="chat">Чат</string>
-    <string name="feedback_input">Feedback</string>
-    <string name="name_input">Name</string>
-    <string name="email_input">Email</string>
+    <string name="feedback_input">Отзыв</string>
+    <string name="name_input">Ваше имя</string>
+    <string name="email_input">Ваш Email</string>
     <string name="feedback_input_hint">Ваш отзыв</string>
     <string name="name_input_hint">Ваше имя</string>
     <string name="email_input_hint">Ваша почта</string>

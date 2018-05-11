@@ -226,9 +226,9 @@ public class FragmentControl extends Fragment {
         Log.d("SEnd DAnns", "Посылаем данные: " + message );
 
         try {
-               Log.d("outStream LOG", String.valueOf(outStream));
-               outStream.write(msgBuffer);
-               Log.d("Send", String.valueOf(msgBuffer));
+            Log.d("outStream LOG", String.valueOf(outStream));
+            outStream.write(msgBuffer);
+            Log.d("Send", String.valueOf(msgBuffer));
         } catch (IOException e) {
             Log.d("SendData", "sendData: " + e.getMessage());
         }

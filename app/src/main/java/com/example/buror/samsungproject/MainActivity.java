@@ -1,7 +1,8 @@
 package com.example.buror.samsungproject;
 
 import android.app.FragmentTransaction;
-import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.*;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -23,6 +25,8 @@ import com.example.buror.samsungproject.fragments.FragmentChat;
 import com.example.buror.samsungproject.fragments.FragmentControl;
 import com.example.buror.samsungproject.fragments.FragmentModuls;
 
+import me.aflak.bluetooth.Bluetooth;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentBook fragbook;
@@ -31,15 +35,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentControl fcontrol;
     Fragment1 fragment1;
     String te;
+    Context context;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);      //activity_main
+        setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+//        Bluetooth bluetooth = new Bluetooth(this);
+//        Log.d("Blurtooth", "onCreate: "+ String.valueOf(bluetooth));
+////        Log.d("Blurtooth", "onCreate: "+ String.valueOf());
+//            bluetooth.enable();
+////            if(bluetooth.isEnabled()){
+//                Log.d("Bluetooth", "onCreate: БЛЮТУЗ ВКЛЮЧЕН");
+//  //          }else{
+//                Log.d("Bluetooth", "onCreate: НЕ ВКЛЮЧИЛСЯ");
+//    //        }
+        BluetoothAdapter bluetooth= BluetoothAdapter.getDefaultAdapter();
+
+        if (bluetooth.isEnabled()) {
+            // Bluetooth включен. Работаем.
+        }
+        else
+        {
+            // Bluetooth выключен. Предложим пользователю включить его.
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, 1);
+        }
 
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
@@ -48,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -117,16 +142,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_moduls) {
             ftranse.replace(R.id.container, fragmoduls);
         } else if (id == R.id.nav_control) {
-            BluetoothAdapter bluetooth= BluetoothAdapter.getDefaultAdapter();
-            if (bluetooth.isEnabled()) {
-                // Bluetooth включен. Работаем.
-            }
-            else
-            {
-                // Bluetooth выключен. Предложим пользователю включить его.
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, 1);
-            }
+//            BluetoothAdapter bluetooth= BluetoothAdapter.getDefaultAdapter();
+//            if (bluetooth.isEnabled()) {
+//                // Bluetooth включен. Работаем.
+//            }
+//            else
+//            {
+//                // Bluetooth выключен. Предложим пользователю включить его.
+////                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+////                startActivityForResult(enableBtIntent, 1);
+//                BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
+//                btAdapter.enable();
+//            }
+
             ftranse.replace(R.id.container, fcontrol);
         } else if (id == R.id.nav_ide) {
             Intent intent = new Intent(this, IDEActivity.class);
