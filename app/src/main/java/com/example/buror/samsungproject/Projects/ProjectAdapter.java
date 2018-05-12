@@ -51,13 +51,18 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
             switch (getPosition()) {
                 case 0:
                     Intent sss0 = new Intent(itemView.getContext(), Internet.class);
-                    sss0.putExtra("link", "https://vk.com/");
+                    sss0.putExtra("link", "https://5.172.28.61:8081/zero.html");
                     itemView.getContext().startActivity(sss0);
                     break;
                 case 1:
                     Intent sss1 = new Intent(itemView.getContext(), Internet.class);
-                    sss1.putExtra("link", "https://ya.ru");
+                    sss1.putExtra("link", "https://5.172.28.61:8081/first.html");
                     itemView.getContext().startActivity(sss1);
+                    break;
+                case 2:
+                    Intent sss2 = new Intent(itemView.getContext(), Internet.class);
+                    sss2.putExtra("link", "https://5.172.28.61:8081/second.html");
+                    itemView.getContext().startActivity(sss2);
                     break;
             }
         }
