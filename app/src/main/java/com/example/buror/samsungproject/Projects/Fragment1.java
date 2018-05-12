@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+
 import com.example.buror.samsungproject.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +28,8 @@ public class Fragment1 extends Fragment {
     private List<Projects> result;
     private ProjectAdapter adapter;
     BookLoading loading;
+
+
 
     @Nullable
     @Override
