@@ -7,4 +7,6 @@
     <color name="book_loading_book">#4c00a9</color>
     <color name="book_loading_page">#4c00a9</color>
     <color name="blue">#5067fa</color>
+    <color name="orange">#ffbb00</color>
+    <color name="green">#2c971b</color>
 </resources>

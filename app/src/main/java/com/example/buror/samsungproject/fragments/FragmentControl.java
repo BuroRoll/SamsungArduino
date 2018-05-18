@@ -31,7 +31,7 @@ public class FragmentControl extends Fragment {
     public FragmentControl() {
     }
 
-    Button btnOn, btn;
+    Button btnOn;
     EditText sendData;
 
 
@@ -43,9 +43,9 @@ public class FragmentControl extends Fragment {
     // SPP UUID сервиса
     private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     // MAC-адрес Bluetooth модуля(меняется)
-    private static String address = "00:00:00:00:00:00";
+    private static String address = "98:D3:32:31:58:5C";
 
-    final ArrayList<String> catNames = new ArrayList<>();
+    final ArrayList<String> history = new ArrayList<>();
     View view;
 
     @Nullable
@@ -78,7 +78,7 @@ public class FragmentControl extends Fragment {
         }, 7000);
 
         final ArrayAdapter<String> adapter;
-        adapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, catNames);
+        adapter = new ArrayAdapter<>(view.getContext(), android.R.layout.simple_list_item_1, history);
         listView.setAdapter(adapter);
 
         try{
@@ -87,7 +87,7 @@ public class FragmentControl extends Fragment {
                     if (sendData.getText().length() != 0) { //sendData != null
                         String data = sendData.getText().toString();
                         sendData(data);
-                        catNames.add(data);
+                        history.add(data);
                         adapter.notifyDataSetChanged();
                         sendData.setText("");
                     }
@@ -223,16 +223,13 @@ public class FragmentControl extends Fragment {
 
     private void sendData(String message) {
         byte[] msgBuffer = message.getBytes();
-        Log.d("SEnd DAnns", "Посылаем данные: " + message );
+
+        Log.d("Send", "Посылаем данные: " + message);
 
         try {
-            Log.d("outStream LOG", String.valueOf(outStream));
             outStream.write(msgBuffer);
-            Log.d("Send", String.valueOf(msgBuffer));
         } catch (IOException e) {
-            Log.d("SendData", "sendData: " + e.getMessage());
+
         }
-
-
     }
 }
