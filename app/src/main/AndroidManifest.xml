@@ -49,6 +49,8 @@
         <activity android:name=".FeedBack.FeedBack"
             android:theme="@style/AppTheme2"/>
         <activity android:name=".IDE.Helper"/>
+        <activity android:name=".Bluetooth_connect"
+            android:theme="@style/AppTheme2"/>
 
     </application>
 

@@ -31,12 +31,12 @@
 
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Обратная связь">
         <menu>
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="FeedBack" />
+                android:title="Оставить отзыв" />
         </menu>
     </item>
 

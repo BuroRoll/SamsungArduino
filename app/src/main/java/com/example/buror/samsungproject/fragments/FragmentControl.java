@@ -28,8 +28,7 @@ import java.util.UUID;
  */
 
 public class FragmentControl extends Fragment {
-    public FragmentControl() {
-    }
+    public FragmentControl() {}
 
     Button btnOn;
     EditText sendData;
@@ -43,10 +42,15 @@ public class FragmentControl extends Fragment {
     // SPP UUID сервиса
     private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     // MAC-адрес Bluetooth модуля(меняется)
-    private static String address = "98:D3:32:31:58:5C";
+    static String address = "98:D3:32:31:58:6C";
 
     final ArrayList<String> history = new ArrayList<>();
     View view;
+
+    public static void setAddress(String addres){
+        address = addres;
+        Log.d("setAddress", "setAddress: Seted" + addres);
+    }
 
     @Nullable
     @Override
@@ -193,8 +197,6 @@ public class FragmentControl extends Fragment {
                 try {
                     btSocket = device.createRfcommSocketToServiceRecord(MY_UUID);
                 } catch (IOException e) {}
-                //Необходим для корректной работы
-                //Вызывается перед .connect() для уточнения возможости соединения
                 btAdapter.cancelDiscovery();
 
 

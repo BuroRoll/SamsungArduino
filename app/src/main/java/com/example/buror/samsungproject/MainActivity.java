@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import com.example.buror.samsungproject.Chat.ChatActivity;
 import com.example.buror.samsungproject.FeedBack.FeedBack;
 import com.example.buror.samsungproject.IDE.IDEActivity;
+import com.example.buror.samsungproject.Items_list.Item0Activity;
 import com.example.buror.samsungproject.Projects.Fragment1;
 import com.example.buror.samsungproject.fragments.FragmentBook;
 import com.example.buror.samsungproject.fragments.FragmentChat;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     IDEActivity fide;
     String te;
     Context context;
-
+    BluetoothAdapter bluetooth;
 
 
     @Override
@@ -46,14 +47,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        BluetoothAdapter bluetooth= BluetoothAdapter.getDefaultAdapter();
+        bluetooth = BluetoothAdapter.getDefaultAdapter();
 
-        if (bluetooth.isEnabled()) {
-            // Bluetooth включен. Работаем.
-        }
+        if (bluetooth.isEnabled()) {}
         else
         {
-            // Bluetooth выключен. Предложим пользователю включить его.
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, 1);
         }
@@ -95,18 +93,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent setting = new Intent(getApplicationContext(), Bluetooth_connect.class);
+            startActivity(setting);
             return true;
         }
 
@@ -134,24 +132,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_moduls) {
             ftranse.replace(R.id.container, fragmoduls);
         } else if (id == R.id.nav_control) {
-//            BluetoothAdapter bluetooth= BluetoothAdapter.getDefaultAdapter();
-//            if (bluetooth.isEnabled()) {
-//                // Bluetooth включен. Работаем.
-//            }
-//            else
-//            {
-//                // Bluetooth выключен. Предложим пользователю включить его.
-////                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-////                startActivityForResult(enableBtIntent, 1);
-//                BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
-//                btAdapter.enable();
-//            }
+            if (bluetooth.isEnabled()) {
+
+            }
+            else
+            {
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, 1);
+            }
 
             ftranse.replace(R.id.container, fcontrol);
         } else if (id == R.id.nav_ide) {
             Intent intent = new Intent(this, IDEActivity.class);
             startActivityForResult(intent, 1);
-//            ftranse.replace(R.id.container, fide);
         } else if (id == R.id.nav_int_projects) {
             ftranse.replace(R.id.container, fragment1);
         } else if (id == R.id.nav_chat) {
@@ -164,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ftranse.commit();
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

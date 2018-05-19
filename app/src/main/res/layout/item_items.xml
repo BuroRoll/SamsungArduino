@@ -49,13 +49,15 @@
             android:layout_gravity="left" />
 
         <TextView
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
             android:id="@+id/txt_rv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
             android:gravity="right|end"
             android:text="Money"
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
     </GridLayout>
 
