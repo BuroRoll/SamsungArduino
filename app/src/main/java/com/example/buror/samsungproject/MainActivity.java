@@ -135,8 +135,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(enableBtIntent, 1);
             }
+            while(true){
+                try{
+                    ftranse.replace(R.id.container, fcontrol);
+                    break;
+                }catch (Exception e){
+                    Log.d("Start Control", "onNavigationItemSelected: " + e.getMessage());
+                }
+            }
 
-            ftranse.replace(R.id.container, fcontrol);
         } else if (id == R.id.nav_ide) {
             Intent intent = new Intent(this, IDEActivity.class);
             startActivityForResult(intent, 1);
@@ -149,7 +156,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, FeedBack.class);
             startActivity(intent);
         }
-        ftranse.commit();
+
+        while(true){
+            try{
+                ftranse.commit();
+                break;
+            }catch (Exception e){
+                Log.d("Commit Error", "onNavigationItemSelected: " + e.getMessage());
+            }
+        }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
