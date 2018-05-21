@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4c00a9</color>
-    <color name="colorPrimaryDark">#6f01f5</color>
+    <color name="colorPrimary">#6f01f5</color>4c00a9
+    <color name="colorPrimaryDark">#4c00a9</color>
     <color name="colorAccent">@color/colorPrimary</color>
     <color name="book_loading_background">#ffffff</color>
     <color name="book_loading_book">#4c00a9</color>

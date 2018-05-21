@@ -69,7 +69,7 @@ public class FragmentModuls extends Fragment {
 
         }
 
-        public void bindView(int position){ //установка данных на экран
+        public void bindView(int position){
             txvName.setText(Items.ItemsTitle[position]);
             price.setText(Items.price[position]);
             picture.setImageResource(Items.pictures[position]);

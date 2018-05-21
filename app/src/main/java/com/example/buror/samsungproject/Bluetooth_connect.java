@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,7 +24,6 @@ public class Bluetooth_connect extends AppCompatActivity implements SwipeRefresh
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private ArrayList<String> mDeviceName = new ArrayList<>();
     private ArrayList<String> mDeviceAdress = new ArrayList<>();
-    Toolbar tb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +31,6 @@ public class Bluetooth_connect extends AppCompatActivity implements SwipeRefresh
         setContentView(R.layout.bluetooth_connect);
         btn = findViewById(R.id.button2);
         listView = findViewById(R.id.list);
-//        tb = findViewById(R.id.toolbar);
-//        tb.setTitle("Arduino Tutorial");
-//        setSupportActionBar(tb);
 
         mSwipeRefreshLayout = findViewById(R.id.swipe_container);
         mSwipeRefreshLayout.setOnRefreshListener(this);
@@ -43,12 +38,6 @@ public class Bluetooth_connect extends AppCompatActivity implements SwipeRefresh
 
         mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_red_light);
 
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 FragmentControl.setAddress(mDeviceAdress.get(position));
@@ -56,11 +45,14 @@ public class Bluetooth_connect extends AppCompatActivity implements SwipeRefresh
             }
         });
 
+        onRefresh();
 
     }
 
     @Override
     public void onRefresh() {
+        mDeviceName.clear();
+        mDeviceAdress.clear();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -77,14 +69,16 @@ public class Bluetooth_connect extends AppCompatActivity implements SwipeRefresh
         }
 
         for(BluetoothDevice bt : pairedDevices){
-            mDeviceName.clear();
-            mDeviceAdress.clear();
+
             mDeviceName.add(bt.getName());
             mDeviceAdress.add(bt.getAddress());
-            Log.d("TAG", "onCreate: " + bt.getName());
-            Log.d("TAG", "onCreate: " + bt.getAddress());
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, mDeviceName);
+            Log.d("TAG", "onCreate Name: " + bt.getName());
+            Log.d("TAG", "onCreate Address: " + bt.getAddress());
+            Log.d("TAG", "onCreate2222: " + mDeviceName.size());
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, mDeviceName); //android.
             listView.setAdapter(adapter);
+            listView.getDividerHeight();
         }
+
     }
 }

@@ -61,7 +61,7 @@ public class FeedBack extends AppCompatActivity {
             feedbackInputField.setError("Введите отзыв");
             nameInputField.setError("Введите ваше имя");
             emailInputField.setError("Введите вашу почту");
-            Toast.makeText(FeedBack.this, "Пожалуйста, заполните все пунктынщгк", Toast.LENGTH_LONG).show();
+            Toast.makeText(FeedBack.this, "Пожалуйста, заполните все пункты", Toast.LENGTH_LONG).show();
             return false;
         } else {
             sendData();
@@ -84,15 +84,14 @@ public class FeedBack extends AppCompatActivity {
         feedbackCall.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                Toast.makeText(FeedBack.this,"Your feedback was submitted!",Toast.LENGTH_LONG).show();
-                // Clear all fields after submitting
+                Toast.makeText(FeedBack.this,"Ваш отзыв отправлен!",Toast.LENGTH_LONG).show();
                 feedbackInputField.setText("");
                 nameInputField.setText("");
                 emailInputField.setText("");
             }
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Toast.makeText(FeedBack.this,"There was an error!",Toast.LENGTH_LONG).show();
+                Toast.makeText(FeedBack.this,"Упс... кажется где-то ошибка",Toast.LENGTH_LONG).show();
             }
         });
     }

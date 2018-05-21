@@ -21,6 +21,7 @@ public class Internet extends AppCompatActivity {
             mWebView = findViewById(R.id.webView);
             mWebView.getSettings().setLoadWithOverviewMode(true);
             mWebView.getSettings().setUseWideViewPort(true);
+            mWebView.getSettings().setJavaScriptEnabled(true);
             Intent intent = getIntent();
             url = intent.getStringExtra("link");
             Log.d("Link", url);

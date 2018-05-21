@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Fragment1 fragment1;
     IDEActivity fide;
     String te;
-    Context context;
     BluetoothAdapter bluetooth;
 
 
@@ -101,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent setting = new Intent(getApplicationContext(), Bluetooth_connect.class);
             startActivity(setting);
@@ -121,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
 
@@ -132,11 +130,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_moduls) {
             ftranse.replace(R.id.container, fragmoduls);
         } else if (id == R.id.nav_control) {
-            if (bluetooth.isEnabled()) {
-
-            }
-            else
-            {
+            if (bluetooth.isEnabled()) {}
+            else{
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(enableBtIntent, 1);
             }
@@ -155,7 +150,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
         }
         ftranse.commit();
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -28,13 +28,4 @@ public class FragmentChat extends ListFragment {
         Intent myyIntent = new Intent(FragmentChat.this.getActivity(), ChatActivity.class);
         startActivity(myyIntent);
     }
-
-//    public void onListItemClick(ListView l, View v, int position, long id) {
-//        super.onListItemClick(l, v, position, id);
-//        Toast.makeText(getActivity(), "position = " + position, Toast.LENGTH_SHORT).show();
-//        if(position == 0) {
-//            Intent myyIntent = new Intent(FragmentChat.this.getActivity(), ChatActivity.class);
-//            startActivity(myyIntent);
-//        }
-//    }
 }
