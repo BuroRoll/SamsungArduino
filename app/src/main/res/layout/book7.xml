@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Прерывания"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Прерывание (англ. interrupt) — сигнал, сообщающий процессору о наступлении какого-либо события. При этом выполнение текущей последовательности команд приостанавливается, и управление передаётся обработчику прерывания, который выполняет работу по обработке события и возвращает управление в прерванный код."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Arduino предоставляет свои функции для работы с прерываниями.
+\nЭти функции объявлены в файле
+\n\hardware\cores\arduino\wiring.h
+\nи реализованы в файле
+\n\hardware\cores\arduino\WInterrupts.c
+"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="void attachInterrupt(uint8_t, void (*)(void), int mode);
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Описание:
+\nОпределяет, какую функцию вызывать, когда происходит внешнее прерывание.
+\nЗамещает предыдущую функцию, если таковая была привязана к данному прерыванию.
+\nБольшинство плат Arduino/Freeduino имеют два внешних прерывания с номерами 0 (на digital pin 2) и 1 (на digital pin 3). Arduino Mega имеет дополнительно ещё четыре:
+с номерами 2 (pin 21), 3 (pin 20), 4 (pin 19) и 5 (pin 18)."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="attachInterrupt(interrupt, function, mode);
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Параметры:
+\ninterrupt: номер прерывания (int)
+\n
+\nfunction: функция, которая должны вызываться при прерывании. Функция не должна принимать параметров и не должна ничего возвращать.
+\n
+\nmode: определяет, когда должно сработать прерывание. Определены следующие константы:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="LOW — вызов прерывания всякий раз, когда на порту низкий уровень напряжения;
+CHANGE – прерывание вызывается при изменении значения на входе;
+RISING – вызов прерывания при изменении уровня напряжения с низкого (LOW) на высокое(HIGH)
+FALLING – вызов прерывания при изменении уровня напряжения с высокого (HIGH) на низкое (LOW)"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="
+\n// светодиод, подключённый к digital pin 13 будет изменять своё
+\n// состояние при изменении напряжения на digital pin 2
+\n//
+\nint pin = 13;
+\nvolatile int state = LOW;
+\n
+\nvoid setup(){
+\n  pinMode(pin, OUTPUT);              // порт как выход
+\n  attachInterrupt(0, blink, CHANGE); // привязываем 0-е прерывание к функции blink().
+\n}
+\n
+\nvoid loop(){
+\n  digitalWrite(pin, state);          // выводим state
+\n}
+\n
+\nvoid blink(){
+\n  state = !state;                    // меняем значение на противоположное
+\n}
+"/>
+
+
+    </LinearLayout>
+</ScrollView>

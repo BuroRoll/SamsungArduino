@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Цифровой/аналоговый вход/выход"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Цифровые выводы"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Выводы платформы Arduino могут работать как входы или как выходы. Данный документ объясняет функционирование выводов в этих режимах. Также необходимо обратить внимание на то, что большинство аналоговых входов Arduino (Atmega) могут конфигурироваться и работать так же как и цифровые порты ввода/вывода."
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Свойства порта вводы/вывода (pin), сконфигурированного как порт ввода"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Выводы Arduino (Atmega) стандартно настроены как порты ввода, таким образом, не требуется явной декларации в функции pinMode(). Сконфигурированные порты ввода находятся в высокоимпедансном состоянии. Это означает то, что порт ввода дает слишком малую нагрузки на схему, в которую он включен. Эквивалентом внутреннему сопротивлению будет резистор 100 МОм подключенный к выводу микросхемы. Таким образом, для перевода порта ввода из одного состояния в другое требуется маленькое значение тока. Это позволяет применять выводы микросхемы для подключения емкостного датчика касания, фотодиода, аналогового датчика со схемой, похожей на RC-цепь."
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="С другой стороны, если к данному выводу ничего не подключено, то значения на нем будут принимать случайные величины, наводимые электрическими помехами или емкостной взаимосвязью с соседним выводом."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Подтягивающие (нагрузочные) резисторы"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Если на порт ввода не поступает сигнал, то в данном случае рекомендуется задать порту известное состояние. Это делается добавлением подтягивающих резисторов 10 кОм, подключающих вход либо к +5 В (подтягивающие к питанию резисторы), либо к земле (подтягивающие к земле резисторы)."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Микроконтроллер Atmega имеет программируемые встроенные подтягивающие к питанию резисторы 20 кОм. Программирование данных резисторов осуществляется следующим образом."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="pinMode(pin, INPUT);// назначить выводу порт ввода
+\ndigitalWrite(pin, HIGH);// включить подтягивающий резистор
+"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Подтягивающий резистор пропускает ток достаточный для того, чтобы слегка светился светодиод подключенный к выводу, работающему как порт ввода. Также легкое свечение светодиодов означает то, что при программировании вывод не был настроен как порт вывода в функции pinMode()."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Подтягивающие резисторы управляются теми же регистрами (внутренние адреса памяти микроконтроллера), что управляют состояниями вывода: HIGH или LOW. Следовательно, если вывод работает как порт ввода со значением HIGH, это означает включение подтягивающего к питанию резистора, то конфигурация функцией pinMode() порта вывода на данном выводе микросхемы передаст значение HIGH. Данная процедура работает и в обратном направлении, т.е. если вывод имеет значение HIGH, то конфигурация вывода микросхемы как порта ввода функцией pinMode() включит подтягивающий к питанию резистор."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textStyle="italic"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Примечание: Затруднительно использовать вывод микросхемы 13 в качестве порта ввода из-за подключенных к нему светодиода и резистора. При подключении подтягивающего к питанию резистора 20 кОм на вводе будет 1.7 В вместо 5 В, т.к. происходит падение напряжения на светодиоде и включенном последовательно резисторе. При необходимости использовать вывод микросхемы 13 как цифровой порт ввода требуется подключить между выводом и землей внешний подтягивающий резистор. "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Свойства порта ввода/вывода, сконфигурированного как порт вывода"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Выводы, сконфигурированные как порты вывода, находятся в низкоимпедансном состоянии. Данные выводы могут пропускать через себя достаточно большой ток. Выводы микросхемы Atmega могут быть источником (положительный) или приемником (отрицательный) тока до 40 мА для других устройств. Такого значения тока достаточно чтобы подключить светодиод (обязателен последовательно включенный резистор), датчики, но недостаточно для большинства реле, соленоидов и двигателей."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Короткие замыкания выводов Arduino или попытки подключить энергоемкие устройства могут повредить выходные транзисторы вывода или весь микроконтроллер Atmega. В большинстве случаев данные действия приведут к отключению вывода на микроконтроллере, но остальная часть схемы будет работать согласно программе. Рекомендуется к выходам платформы подключать устройства через резисторы 470 Ом или 1 кОм, если устройству не требуется больший ток для работы."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Аналоговые входы"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Аналого-цифровой преобразователь"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Микроконтроллеры Atmega, используемые в Arduino, содержат шестиканальный аналого-цифровой преобразователь (АЦП). Разрешение преобразователя составляет 10 бит, что позволяет на выходе получать значения от 0 до 1023. Основным применением аналоговых входов большинства платформ Arduino является чтение аналоговых датчиком, но в тоже время они имеют функциональность вводов/выводов широкого применения (GPIO) (то же, что и цифровые порты ввода/вывода 0 - 13)."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Таким образом, при необходимости применения дополнительных портов ввода/вывода имеется возможность сконфигурировать неиспользуемые аналоговые входы."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Цоколевка"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Цоколёвка («распино́вка»), или разво́дка вы́водов - описание каждого контакта электрического соединения (например, разъёма) в электронной аппаратуре."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Выводы Arduino, соответствующие аналоговым входам, имеют номера от 14 до 19. Это относится только к выводам Arduino, а не к физическим номерам выводов микроконтроллера Atmega. Аналоговые входы могут использоваться как цифровые выводы портов ввода/вывода. Например, код программы для установки вывода 0 аналогового входа на порт вывода со значением HIGH:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="pinMode(14, OUTPUT);
+\ndigitalWrite(14, HIGH);"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Подтягивающие резисторы"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Выводы аналоговые входов имеют подтягивающие резисторы работающие как на цифровых выводах. Включение резисторов производится командой"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="digitalWrite(14, HIGH);//включить резистор на выводе аналогового входа "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="пока вывод работает как порт ввода."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Подключение резистора повлияет на величину сообщаемую функцией analogRead() при использовании некоторых датчиков. Большинство пользователей использует подтягивающий резистор при применении вывода аналогового входа в его цифровом режиме."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Подробности и предостережения"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Для вывода, работавшего ранее как цифровой порт вывода, команда analogRead будет работать некорректно. В этом случае рекомендуется сконфигурировать его как аналоговый вход. Аналогично, если вывод работал как цифровой порт вывода со значением HIGH, то обратная установка на ввод подключит подтягивающий резистор. "/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

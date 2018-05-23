@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -37,8 +37,9 @@
 
 
         <TextView
-            android:textSize="15dp"
+
             android:layout_width="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:layout_height="wrap_content"
             android:text="Ток - направленное, упорядоченное движение заряженных частиц.
 \nЕсли провести аналогию для тока, то его можно сравнить с водой. Она также течёт по трубе(проводнику). Это не самое точное сравнение, но для понимания подходит.
@@ -57,7 +58,7 @@
             android:textSize="30dp"/>
 
         <TextView
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Сила тока - количестов тока, проходящее через поперечное сечение проводника за определённый отвезок времени.
@@ -92,7 +93,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Представим две ёмкости с водой, соединенные трубкой. Одна ёмкость находится выше другой.
 \nИменно разность уровня воды(перепад высот) - можно назвать напряжением.
 \nЕсли налить воды в верхнюю ёмкость, то вода будет течь вниз(логично), и та сила, которая тянет воду в сосуд ниже и называется напряжением(или её можно назвать разностью потенциалов(как разность высот))"/>
@@ -135,7 +136,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Исходя из этого, сопротивление проводника – это физическая величина, которая характеризует свойство проводника препятствовать проводить электрический ток. Более простыми словами это величина, которая мешает проводить электрический ток.
 \nСопротивление проводника зависит от самого проводника(то из чего он сделан), от его длинны и поперечного сечения(диаметра проводника)"/>
 
@@ -168,7 +169,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Закон Ома соединяет основные поняти электричества.
 \nОн объединяет в себе силу тока, напряжение и сопротивление
 \nИз данного закона можно понять, что сила тока прямопропорциональна напряжению(чем больше напряжение, тем больше сила тока) и обратно пропорционально сопротивлению(чем больше сопротивление, тем меньше сила тока)"/>
@@ -180,7 +181,7 @@
             android:src="@drawable/zaconoma"/>
 
         <TextView
-            android:id="@+id/text2"
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"

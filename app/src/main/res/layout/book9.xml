@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Манипуляции с портами"
+            android:textStyle="bold"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/pin"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="PORTD отображается на цифровые выводы Arduino от 0 до 7."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="DDRD – The Port D Data Direction Register (регистр направления передачи данных порта D)
+\nPORTD – The Port D Data Register (регистр данных порта D)
+\nPIND – The Port D Input Pins Address (адрес входных выводов порта D)"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="PORTB отображается на цифровые выводы Arduino от 8 до 13, два старших бита (6 и 7) отображаются на выводы, получающие тактовый сигнал с кварцевого резонатора (crystal) и не используются."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="DDRB – The Port B Data Direction Register (регистр направления передачи данных порта B)
+\nPORTB – The Port B Data Register (регистр данных порта B)
+\nPINB – The Port B Input Pins Address (адрес входных выводов порта B)
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="PORTC отображается на аналоговые выводы Arduino от 0 до 5, выводы 6 и 7 доступны только в Arduino Mini."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="DDRC – The Port C Data Direction Register (регистр направления передачи данных порта C)
+\nPORTC – The Port C Data Register (регистр данных порта C)
+\nPINC – The Port C Input Pins Address (адрес входных выводов порта C)"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Переменные, использующие порт"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="В соответствии с приведенным выше назначением выводов, регистры PortD управляют цифровыми выводами Arduino от 0 до 7."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Можно, однако, заметить, что выводы 0 и 1 используются для последовательного обмена при программировании и отладке Arduino, поэтому обычно следует избегать изменять состояние этих выводов, кроме необходимости задействовать функции последовательного ввода-вывода. Знайте, что это может повлиять на загрузку или отладку программы." />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="DDRD это регистр направления передачи данных порта D. Биты этого порта управляют тем, настроены ли выводы Порта D как входы, или как выходы, например, так:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="\nDDRD = B11111110;        // назначает выводы Arduino 1-7 выходными, вывод 0- входным
+\n
+\nDDRD = DDRD | B11111100; //это менее рискованно - назначает выводы со 2 по 7
+\n                        // выходными, не изменяя значений на выводах 0 и 1
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="PORTD – это регистр состояния выходов. Например,"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="\nPORTD = B10101000; // устанавливает HIGH на цифровых выводах 7,5,3
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Вы получите 5 В на этих выводах только в том случае, когда они были назначены выходными с использованием регистра DDRD или с помощью функции pinMode(). "/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="PIND – это входная регистровая переменная – она одновременно прочитает все цифровые входы."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="«За» и «против» манипулирования портами через регистры."
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Вообще говоря, делать подобные вещи не слишком хорошая идея. Почему? Вот несколько причин:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="•Код гораздо более сложен для отладки и поддержки, и достаточно тяжел для понимания другими людьми. Выполнение кода занимает у процессора всего несколько микросекунд, но вам могут потребоваться часы, чтобы понять, почему он работает неверно и исправить это! Ваше время дорого, не так ли? А время компьютера очень дешево, соизмеримо со стоимостью потребленного им электричества. Обычно гораздо лучше писать код более очевидным образом.
+\n•Код менее переносимый. При использовании digitalRead() и digitalWrite(), гораздо проще написать код, который будет работать на всех микроконтроллерах Atmel, тогда как управляющие регистры и регистры порта могут быть разными у каждого типа микроконтроллера.
+\n•Используя прямой доступ к порту, гораздо проще вызвать непреднамеренные нарушения в работе. Обратите внимание на строку DDRD = B11111101; выше упоминалось, что вывод 1 должен оставаться входным выводом. Вывод 1 – это приемная линия последовательного порта. Будет очень легко случайно вызвать остановку работы последовательного порта, назначив вывод 1 выходным! Разве теперь вас не собьет с толку то, что вы вдруг не сможете принимать последовательные данные?"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Так что вы можете сказать сами себе: - Ну ладно, захочется ли мне после этого все время использовать эту штуку? Вот несколько положительных сторон прямого доступа к порту:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="•Если вам не хватает памяти программ, то эти трюки помогут уменьшить ваш код. Потребуется гораздо меньше байт скомпилированного кода для одновременной записи ряда аппаратных выводов одновременно через регистры порта, чем с использованием циклической записи каждого вывода в отдельности. Иногда от этого зависит, войдет ваша программа во флэш-память или нет!
+\n•Иногда возникает необходимость несколько выходных выводов точно в одно время. Вызов функции digitalWrite(10,HIGH) вслед за digitalWrite(11,HIGH) приведет к тому, что вывод 10 будет установлен в «1» на несколько микросекунд раньше, чем вывод 11, что может сбить с толку точную срабатывающую по времени цифровую схему, к которой вы должны подключаться. В качестве альтернативы вы могли бы установить оба бита в «1» точно в одно время, используя PORTB |= B1100;
+\n•Вам может потребоваться иметь возможность переключать выводы очень быстро, за доли микросекунд. Если посмотреть на исходный код по ссылке lib/targets/arduino/wiring.c, вы обнаружите, что digitalRead() и digitalWrite() содержат каждая по дюжине или около того строк кода, которые будут скомпилированы в порядочное число машинных команд. Каждая машинная команда требует один такт на частоте 16 МГц, что может стать проблемой в приложениях, чувствительных ко времени. Прямой доступ к порту сделает ту же работу за гораздо меньшее число тактов."/>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

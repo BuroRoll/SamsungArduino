@@ -38,6 +38,38 @@ public class Book0Activity extends AppCompatActivity {
                 setContentView(R.layout.book3);
                 Slidr.attach(this);
                 break;
+            case "four":
+                setContentView(R.layout.book4);
+                Slidr.attach(this);
+                break;
+            case "five":
+                setContentView(R.layout.book5);
+                Slidr.attach(this);
+                break;
+            case "six":
+                setContentView(R.layout.book6);
+                Slidr.attach(this);
+                break;
+            case "seven":
+                setContentView(R.layout.book7);
+//                TextView t2 =findViewById(R.id.textlink);
+//                t2.setMovementMethod(LinkMovementMethod.getInstance());
+                Slidr.attach(this);
+                break;
+            case "eight":
+                setContentView(R.layout.book8);
+                Slidr.attach(this);
+                break;
+            case "nine":
+                setContentView(R.layout.book9);
+                Slidr.attach(this);
+                break;
+            case "ten":
+                setContentView(R.layout.book10);
+                Slidr.attach(this);
+                TextView t2 = findViewById(R.id.text5);
+                t2.setMovementMethod(LinkMovementMethod.getInstance());
+                break;
         }
 
     }

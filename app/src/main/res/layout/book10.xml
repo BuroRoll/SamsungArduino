@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Ускоряем свою Arduino"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Месяца 3 назад, как и многие горе-электроники, купил себе на мой тогдашний взгляд самую навороченную микропроцессорную плату из семейства Arduino, а именно Seeeduino Mega, на базе процессора Atmega1280. Побаловавшись всласть вращающимся сервоприводом и моргающим светодиодом, встал вопрос: «зачем же я её купил?»."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Я работаю одним из ведущих конструкторов на одном крупном военном Зеленоградском заводе, и в данный момент веду проект по разработке метрологического средства измерения. В данной задаче существует бесконечное множество проблем, которые требуют индивидуального решения. Одной из таких задач является управление шаговым двигателем без шумов и с шагом не 1.8 градуса, как сказано в документации шагового двигателя, а до 0.0001 градуса. Казалось бы, задача сложна и нерешабельна, но, повозившись немного со схемами управления, пришёл к выводу, что всё реально и возможно. Требуется только генерация двух сигналов специфичной формы и со сдвигом фаз и частотой изменения напряжения до 1 МГц. (Подробное исследование шагового мотора и раскрытие всех тайн управления напишу в следующей статье) Сразу же в голове стали появляться проблески надежды, что я не зря потратил 1500 рублей на свою красненькую Seeeduino, и я, набравшись энтузиазма, начал разбираться."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Первоначальный ужас:"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Подключив микропроцессорную плату к осцилографу, и написав цикл digitalWrite(HIGH), и ниже digitalWrite(LOW), на осцилографе обнаружил довольно унылый меандр с частотой 50Гц. Это кошмар. Это крах, подумал я, на фоне требуемых 1Мгц."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Далее, через осцилограф, я изучил еще несколько скоростей выполнения:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="AnalogRead() — скорость выполнения 110 мкс.
+\nAnalogWrite() — 2000 мкс
+\nSerialPrintLn() — при скорости 9600 около 250мкс, а при максимальной скорости около 3мкс.
+\nDigitalWrite() — 1800мкс
+\nDigitalRead() — 1900мкс"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="На этом я, всплакнув, чуть не выкинул свою Seeeduino. Но не тут-то было!"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Улучшаем AnalogRead()"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="#define FASTADC 1
+\n
+\n// defines for setting and clearing register bits
+\n#ifndef cbi
+\n#define cbi(sfr, bit) (_SFR_BYTE(sfr) &amp;= ~_BV(bit))
+\n#endif
+\n#ifndef sbi
+\n#define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
+\n#endif
+\n
+\nvoid setup() {
+\nint start ;
+\nint i ;
+\n
+\n#if FASTADC
+\n// set prescale to 16
+\nsbi(ADCSRA,ADPS2) ;
+\ncbi(ADCSRA,ADPS1) ;
+\ncbi(ADCSRA,ADPS0) ;
+\n#endif
+\n
+\nSerial.begin(9600) ;
+\nSerial.print(&quot;ADCTEST: &quot;) ;
+\nstart = millis() ;
+\nfor (i = 0 ; i &lt; 30000 ; i++)
+\nanalogRead(0) ;
+\nSerial.print(millis() - start) ;
+\nSerial.println(&quot; msec (30000 calls)&quot;) ;
+\n        }
+\n
+\n        void loop() {
+\n        }
+"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Результат: скорость 18,2 мкс против бывших 110 мкс.
+Кстати, максимальная скорость АЦП Атмеги как раз 16мкс. Как вариант — использовать другую микросхему, заточенную именно под АЦП, которая позволит уменьшить скорость до 0,2мкс (читать ниже, почему)"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Улучшаем digitalWrite()"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Каждая Arduino/Seeeduino/Feduino/Orduino/прочаяduino имеет порты. Каждый порт — 8 бит, которые сначала надо настроить на запись. Например, на моей Seeeduino PORTA — c 22 по 30 ножку. Теперь всё просто. Управляем с 22 по 30 ножки с помощью функций"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="PORTA=B00001010 (битовая, ножки 23 и 25 — HIGH)
+\nили
+\nPORTA=10 (десятичная, всё так же)"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Результат = 0,2мкс против 1800мкс, которые достигаются обычным digitalWrite()"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Улучшаем digitalRead()"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Практически то же самое, что и в улучшении с digitalWrite(), но теперь настраиваем ножки на INPUT, и используем, например:"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="if (PINA==B00000010) {...} (если на ножке 23 присутствует HIGH, а на 22 и 24-30 присутствует LOW)
+\nРезультат выполнения этого if() — 0.2мкс против 1900мкс, которые достигаются обычным digitalRead()"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Улучшаем ШИМ модулятор, или analogWrite()"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Итак, есть данные, что digitalRead() исполняется 0,2мкс, и ШИМ модулятор имеет дискретность 8 разрядов, минимальное время переключения ШИМ 51,2мкс против 2000 мкс.
+\nИспользуем следующий код:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="int PWM_time=32; //Число, которое мы как бы хотим записать в analogWrite(PIN, 32)
+\nfor (int k=0;k&lt;PWM_time) PORTA=B00000001;
+\nfor (int k=0;k&lt;256-PWM_time) PORTA=B00000000;"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Вот и получили ШИМ с частотой 19кГц против 50Гц."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Подведём итоги"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="digitalWrite() было 1800мкс, стало 0,2мкс
+\ndigitalRead() было 1900мкс, стало 0,2мкс
+\nanalogWrite() было 2000мкс, стало 51,2мкс
+\nanalogRead() было 110мкс, стало 18,2мкс, а можно до 0,2мкс"/>
+
+
+
+
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/habr"/>
+
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>

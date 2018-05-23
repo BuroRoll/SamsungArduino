@@ -52,17 +52,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Для начала стоит понять, что программу нельзя читать и писать как книгу: от корки до корки, сверху вниз, строку за строкой. Любая программа состоит из отдельных блоков. Начало блока кода в C/C++ обозначается левой фигурной скобкой {, его конец — правой фигурной скобкой }."/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Блоки бывают разных видов и какой из них когда будет исполняться зависит от внешних условий. В примере минимальной программы вы можете видеть 2 блока. В этом примере блоки называются определением функции. Функция — это просто блок кода с заданным именем, которым кто-то затем может пользоваться из-вне."/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="В данном случае у нас 2 функции с именами setup и loop. Их присутствие обязательно в любой программе на C++ для Arduino. Они могут ничего и не делать, как в нашем случае, но должны быть написаны. Иначе на стадии компиляции вы получите ошибку."/>
 
 
@@ -76,7 +76,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Давайте теперь дополним нашу программу так, чтобы происходило хоть что-то. На Arduino, к 13-му пину подключён светодиод. Им можно управлять, чем мы и займёмся."/>
         <!--<ImageView-->
             <!--android:layout_width="wrap_content"-->
@@ -106,7 +106,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Компилируйте, загрузите программу. Вы увидите, что каждую секунду светодиод на плате помигивает. Разберёмся почему этот код приводит к ежесекундному миганию.
 В наши ранее пустые функции мы добавили несколько выражений. Они были размещены между фигурными скобками функций setup и loop. В setup появилось одно выражение, а в loop сразу 4.
 Каждое выражение — это приказ процессору сделать нечто. Выражения в рамках одного блока исполняются одно за другим, строго по порядку без всяких пауз и переключений. То есть, если мы говорим об одном конкретном блоке кода, его можно читать сверху вниз, чтобы понять что делается.
@@ -119,7 +119,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Теперь давайте попробуем понять почему написанная программа приводит в итоге к миганию светодиода.
 Как известно, пины Arduino могут работать и как выходы и как входы. Когда мы хотим чем-то управлять, то есть выдавать сигнал, нам нужно перевести управляющий пин в состояние работы на выход. В нашем примере мы управляем светодиодом на 13-м пине, поэтому 13-й пин перед использованием нужно сделать выходом.
 Это делается выражением в функции setup:"/>
@@ -135,7 +135,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Вернёмся к нашему коду. Итак, поскольку мы планируем вечно мигать светодиодом, управляющий пин должен один раз быть сделан выходом и затем мы не хотим вспоминать об этом. Для этого идеологически и предназначена функция setup: настроить плату как нужно, чтобы затем с ней работать.
 \nПерейдём к функции loop:"/>
         <!--<ImageView-->
@@ -161,7 +161,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:text="Она, как говорилось, вызывается сразу после setup. И вызывается снова и снова как только сама заканчивается. Функция loop называется основным циклом программы и идеологически предназначена для выполнения полезной работы. В нашем случае полезная работа — мигание светодиодом.
 
 \nПройдёмся по выражениям по порядку. Итак, первое выражение — это вызов встроенной функции digitalWrite. Она предназначена для подачи на заданный пин логического нуля (LOW, 0 вольт) или логической единицы (HIGH, 5 вольт) В функцию digitalWrite передаётся 2 аргумента: номер пина и логическое значение. В итоге, первым делом мы зажигаем светодиод на 13-м пине, подавая на него 5 вольт.

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Функции"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Разбиение на сегменты кода функциями позволяет создавать части кода, которые выполняют определенные задания. После выполнения происходит возврат в место, откуда была вызвана функция. Причиной создания функции является необходимость выполнять одинаковое действие несколько раз."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Разделения кода на функции имеет ряд преимуществ:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•Функции позволяют организовать программу. Очень часто помогают заранее составить концепцию программы.
+\n•Функции кодируют одно действие в одном месте программы. Далее необходимо только отладить код функции.
+\n•Функции сокращают шансы на появление ошибки при необходимости изменения кода.
+\n•Функции сокращают текст скетчей и делают его компактным, т.к. некоторые секции используются много раз.
+\n•Функции облегчают использование кода в других программах делая его модульным. В этом случае функции обладают еще одним небольшим преимуществом, делая код программы легким для чтения."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Существуют две обязательные функции в скетчах Arduino setup() и loop(). Другие функции должны создаваться за скобками этих функций. В следующем примере будет создана простая функция умножения двух чисел."/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/functionsyntax"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Для вызова функции умножения ей передаются параметры данных:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="void loop(){
+\n   int i = 2;
+\n   int j = 3;
+\n   int k;
+\n
+\n   k = myMultiplyFunction(i, j); // k содержит 6
+\n}
+
+"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Созданную функцию необходимо задекларировать вне скобок любой другой функции, таким образом &quot;myMultiplyFunction()\&quot; может стоять выше или ниже функции &quot;loop()&quot;."/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Весь скетч будет выглядеть следующим образом:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="void setup(){
+\n  Serial.begin(9600);
+\n}
+
+\nvoid loop(){
+\n  int i = 2;
+\n  int j = 3;
+\n  int k;
+\n
+\n  k = myMultiplyFunction(i, j); // k содержит 6
+\n  Serial.println(k);
+\n  delay(500);
+\n}
+\n
+\nint myMultiplyFunction(int x, int y){
+\n  int result;
+\n  result = x * y;
+\n  return result;
+\n}
+
+"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Управляющие операторы"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Оператор If"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="if (условие) и ==, !=, &lt;, &gt; (операторы сравнения)"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="if, используется в сочетании с операторами сравнения, проверяет, достигнута ли истинность условия, например, превышает ли входное значение заданное число. Формат оператора if следующий:" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="if (someVariable &gt; 50){
+\n// выполнять действия
+\n}
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Программа проверяет, значение someVariable больше чем 50 или нет. Если да, то выполняются определенные действия. Говоря иначе, если выражение в круглых скобках истинно, выполняются операторы внутри фигурных скобок. Если нет, программа пропускает этот код."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Скобки после оператора if могут быть опущены. Если так сделано, только следующая строка (обозначенная точкой с запятой) становится оператором, выполняемым в операторе if."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="if (x &gt; 120) digitalWrite(LEDpin, HIGH);
+\n
+\nif (x &gt; 120)
+\ndigitalWrite(LEDpin, HIGH);
+\n
+\nif (x &gt; 120){ digitalWrite(LEDpin, HIGH); }
+\n
+\nif (x &gt; 120){
+\ndigitalWrite(LEDpin1, HIGH);
+\ndigitalWrite(LEDpin2, HIGH);
+\n}
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Выражения, которые вычисляются внутри круглых скобок, могут состоять из одного или нескольких операторов."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Операторы сравнения"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text=" x == y (x равно y)
+\n
+\n x != y (x не равно y)
+\n
+\n x &lt; y (x меньше чем y)
+\n
+\n x &gt; y (x больше чем y)
+\n
+\n x &lt;= y (x меньше чем или равно y)
+\n
+\n x &gt;= y (x больше чем или равно y)
+"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Оператор If..else"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Конструкция if..else предоставляет больший контроль над процессом выполнения кода, чем базовый оператор if, позволяя осуществлять несколько проверок, объединенных вместе. Например, аналоговый вход может быть проверен и выполнено одно действие, если на входе меньше 500, или другой действие, если на входе 500 или больше. Код при этом может выглядеть так:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="if (pinFiveInput &lt; 500){
+\n  // действие A
+\n}else{
+\n  // действие B
+\n}
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Else позволяет делать отличную от указанной в if проверку, чтобы можно было осуществлять сразу несколько взаимоисключающих проверок. Каждая проверка позволяет переходить к следующему за ней оператору не раньше, чем получит логический результат ИСТИНА. Когда проверка с результатом ИСТИНА найдена, запускается вложенная в нее блок операторов, и затем программа игнорирует все следующие строки в конструкции if..else. Если ни одна из проверок не получила результат ИСТИНА, по умолчанию выполняется блок операторов в else, если последний присутствует, и устанавливается действие по умолчанию."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Отметим, что конструкция else if может быть использована с или без заключительного else и наоборот. Допускается неограниченное число таких переходов else if."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="if (pinFiveInput &lt; 500){
+\n  // выполнять действие A
+\n}else if (pinFiveInput >= 1000){
+\n  // выполнять действие B
+\n}else{
+\n  // выполнять действие  C
+\n}
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Другой способ создания переходов со взаимоисключающими проверками использует оператор switch case."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Оператор Switch"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Подобно конструкции if, switch...case управляет процессом выполнения программы, позволяя программисту задавать альтернативный код, который будет выполняться при разных условиях. В частности, оператор switch сравнивает значение переменной со значением, определенном в операторах case. Когда найден оператор case, значение которого равно значению переменной,   выполняется программный код в этом операторе."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Ключевое слово break является командой выхода из оператора case и обычно используется в конце каждого case. Без оператора break оператор switchбудет продолжать вычислять  следующие выражения, пока не достигнет break или конец оператора switch.  "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="switch (var) {
+\n    case 1:
+\n      //выполняется, когда var равно 1
+\n      break;
+\n    case 2:
+\n      //выполняется когда  var равно 2
+\n      break;
+\n    default:
+\n      // выполняется, если не выбрана ни одна альтернатива
+\n      // default необязателен
+\n  }
+
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Циклы while"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="While будет вычислять в цикле непрерывно и бесконечно до тех пор, пока выражение в круглых скобках, () не станет равно логическому ЛОЖНО. Что-то должно изменять значение проверяемой переменной, иначе выход из цикла while никогда не будет достигнут. Это изменение может происходить как в программном коде, например, при увеличении переменной, так и во внешних условиях, например, при тестировании датчика."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="\nvar = 0;
+
+\nwhile(var &lt; 200){
+\n // выполнить что-то, повторив 200 раз
+\n var++;
+\n}
+
+
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="do .. while"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Цикл do работает так же, как и цикл while, за исключением того, что условие проверяется в конце цикла, таким образом, цикл do будет всегда выполняться хотя бы раз."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="do{
+\n    // последовательность операторов
+\n}while (проверка условия);
+"/>
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Например:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="do{
+\n  delay(50);          // подождать, пока датчики стабилизируются
+\n  x = readSensors(); // проверить датчики
+\n} while (x &lt; 100);
+"/>
+
+
+    </LinearLayout>
+</ScrollView>

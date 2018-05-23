@@ -25,6 +25,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
+
+    <string name="habr">
+        <a href="https://habr.com/post/141442//">Оригинал статьи</a>
+    </string>
     <string name="linktosite">
         <a href="vk.com">ВКАНТАКТИКЕ</a>
     </string>

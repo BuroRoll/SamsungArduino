@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 
 import com.example.buror.samsungproject.Books_lists.Book0Activity;
@@ -92,6 +92,41 @@ public class FragmentBook extends Fragment {
                  Intent intent3 = new Intent(getActivity(), Book0Activity.class);
                  intent3.putExtra("key","three");
                  startActivity(intent3);
+                 break;
+             case 4:
+                 Intent intent4 = new Intent(getActivity(), Book0Activity.class);
+                 intent4.putExtra("key","four");
+                 startActivity(intent4);
+                 break;
+             case 5:
+                 Intent intent5 = new Intent(getActivity(), Book0Activity.class);
+                 intent5.putExtra("key", "five");
+                 startActivity(intent5);
+                 break;
+             case 6:
+                 Intent intent6 = new Intent(getActivity(), Book0Activity.class);
+                 intent6.putExtra("key", "six");
+                 startActivity(intent6);
+                 break;
+             case 7:
+                 Intent intent7 = new Intent(getActivity(), Book0Activity.class);
+                 intent7.putExtra("key", "seven");
+                 startActivity(intent7);
+                 break;
+             case 8:
+                 Intent intent8 = new Intent(getActivity(), Book0Activity.class);
+                 intent8.putExtra("key", "eight");
+                 startActivity(intent8);
+                 break;
+             case 9:
+                 Intent intent9 = new Intent(getActivity(), Book0Activity.class);
+                 intent9.putExtra("key", "nine");
+                 startActivity(intent9);
+                 break;
+             case 10:
+                 Intent intent10 = new Intent(getActivity(), Book0Activity.class);
+                 intent10.putExtra("key", "ten");
+                 startActivity(intent10);
                  break;
          }
      }
