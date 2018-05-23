@@ -2,22 +2,27 @@ package com.example.buror.samsungproject.Items_list;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.method.ScrollingMovementMethod;
+import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import com.example.buror.samsungproject.R;
+import com.r0adkll.slidr.Slidr;
 
-/**
- * Created by BuroRoll on 28.03.2018.
- */
+
+
 public class Item0Activity extends AppCompatActivity {
-    TextView textview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.item0);
-        textview = findViewById(R.id.list_e_taskdesc);
-        textview.setMovementMethod(new ScrollingMovementMethod());
+        String key =  getIntent().getStringExtra("key");
+        switch(key){
+            case "zero":
+                setContentView(R.layout.item0);
+                Slidr.attach(this);
+                TextView t2 = findViewById(R.id.buyUno);
+                t2.setMovementMethod(LinkMovementMethod.getInstance());
+                break;
+        }
     }
 }

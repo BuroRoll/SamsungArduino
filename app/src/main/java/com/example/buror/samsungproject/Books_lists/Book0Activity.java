@@ -3,17 +3,12 @@ package com.example.buror.samsungproject.Books_lists;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
-import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.buror.samsungproject.R;
 import com.r0adkll.slidr.Slidr;
 
-/**
- * Created by buror on 24.01.2018.
- */
+
 
 public class Book0Activity extends AppCompatActivity {
     @Override
@@ -52,8 +47,6 @@ public class Book0Activity extends AppCompatActivity {
                 break;
             case "seven":
                 setContentView(R.layout.book7);
-//                TextView t2 =findViewById(R.id.textlink);
-//                t2.setMovementMethod(LinkMovementMethod.getInstance());
                 Slidr.attach(this);
                 break;
             case "eight":

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.buror.samsungproject.Books_lists.Book0Activity;
 import com.example.buror.samsungproject.Items_list.Item0Activity;
 import com.example.buror.samsungproject.Items_list.Items;
 import com.example.buror.samsungproject.Projects.Internet;
@@ -79,17 +80,9 @@ public class FragmentModuls extends Fragment {
         public void onClick(View v) {
             switch(getPosition()){
                 case 0:
-                    Intent sss5 = new Intent(itemView.getContext(), Internet.class);
-                    sss5.putExtra("link", "https://goo.gl/xHMrXN");
-                    itemView.getContext().startActivity(sss5);
-                    break;
-                case 1:
-                    Intent sss6 = new Intent(itemView.getContext(), Internet.class);
-                    sss6.putExtra("link", "https://goo.gl/JfN4he");
-                    itemView.getContext().startActivity(sss6);
-                    break;
-                case 2:
-                    Toast.makeText(getActivity(), String.valueOf(getPosition()), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), Item0Activity.class);
+                    intent.putExtra("key","zero");
+                    startActivity(intent);
                     break;
             }
         }
