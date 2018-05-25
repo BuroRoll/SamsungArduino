@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
 
+
         } else if (id == R.id.nav_ide) {
             Intent intent = new Intent(this, IDEActivity.class);
             startActivityForResult(intent, 1);

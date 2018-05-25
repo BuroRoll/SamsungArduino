@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Arduino Mega"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/buyMega"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buyMega"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Общие сведения"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/mega1"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Arduino Mega построена на микроконтроллере ATmega1280. Платформа содержит 54 цифровых входа/выходов (14 из которых могут использоваться как выходы ШИМ), 16 аналоговых входов,4 последовательных порта UART, кварцевый генератор 16 МГц, разъем USB, силовой разъем, разъем ICSP и кнопку перезагрузки. Для работы необходимо подключить платформу к компьютеру посредством кабеля USB или подать питание при помощи адаптера AC/DC, или аккумуляторной батареей. Arduino Mega совместима со всеми платами расширения, разработанными для платформ Duemilanove или Diecimila."/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/megaharackteristicks"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Питание"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Arduino Mega может получать питание через подключение USB или от внешнего источника питания. Источник питания выбирается автоматически."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Внешнее питание (не USB) может подаваться через преобразователь напряжения AC/DC (блок питания) или аккумуляторной батареей. Преобразователь напряжения подключается посредством разъема 2.1 мм с центральным положительным полюсом. Провода от батареи подключаются к выводам Gnd и Vin разъема питания. "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Платформа может работать при внешнем питании от 6 В до 20 В. При напряжении питания ниже 7 В, вывод 5V может выдавать менее 5 В, при этом платформа может работать нестабильно. При использовании напряжения выше 12 В регулятор напряжения может перегреться и повредить плату. Рекомендуемый диапазон от 7 В до 12 В."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Выводы питания:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="  •VIN. Вход используется для подачи питания от внешнего источника (в отсутствие 5 В от разъема USB или другого регулируемого источника питания). Подача напряжения питания происходит через данный вывод.
+\n  •5V. Регулируемый источник напряжения, используемый для питания микроконтроллера и компонентов на плате. Питание может подаваться от вывода VIN через регулятор напряжения, или от разъема USB, или другого регулируемого источника напряжения 5 В.
+\n  •3V3. Напряжение на выводе 3.3 В генерируемое микросхемой FTDI на платформе. Максимальное потребление тока 50 мА.
+\n  •GND. Выводы заземления."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Входы и Выходы"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Каждый из 54 цифровых выводов Mega, используя функции pinMode(), digitalWrite(), и digitalRead(), может настраиваться как вход или выход. Выводы работают при напряжении 5 В. Каждый вывод имеет нагрузочный резистор (стандартно отключен) 20-50 кОм и может пропускать до 40 мА. Некоторые выводы имеют особые функции:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="  •Последовательная шина: 0 (RX) и 1 (TX); Последовательная шина 1: 19 (RX) и 18 (TX); Последовательная шина 2: 17 (RX) и 16 (TX); Последовательная шина 3: 15 (RX) и 14 (TX). Выводы используются для получения (RX) и передачи (TX) данных TTL. Выводы 0 и 1 подключены к соответствующим выводам микросхемы последовательной шины FTDI USB-to-TTL.
+\n  •Внешнее прерывание: 2 (прерывание 0), 3 (прерывание 1), 18 (прерывание 5), 19 (прерывание 4), 20 (прерывание 3), и 21 (прерывание 2). Данные выводы могут быть сконфигурированы на вызов прерывания либо на младшем значении, либо на переднем или заднем фронте, или при изменении значения. Подробная информация находится в описании функции attachInterrupt().
+\n  •PWM: 0 до 13. Любой из выводов обеспечивает ШИМ с разрешением 8 бит при помощи функции analogWrite().
+\n  •SPI: 50 (MISO), 51 (MOSI), 52 (SCK), 53 (SS). Посредством данных выводов осуществляется связь SPI, которая, хотя и поддерживается аппаратной частью, не включена в язык Arduino. Также выводы SPI могут быть выведены на блоке ICSP, который совместим с платформами Duemilanove и Diecimila.
+\n  •LED: 13. Встроенный светодиод, подключенный к цифровому выводу 13. Если значение на выводе имеет высокий потенциал, то светодиод горит.
+\n  •I2C: 20 (SDA) и 21 (SCL). Посредством выводов осуществляется связь I2C (TWI). Для создания используется библиотека Wire (информация на сайте Wiring). Расположение выводов на платформе Mega не соответствует расположению Duemilanove или Diecimila."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="На платформе Mega установлены 16 аналоговых входов, каждый разрешением 10 бит (т.е. может принимать 1024 различных значения). Стандартно выводы имеют диапазон измерения до 5 В относительно земли, тем не менее имеется возможность изменить верхний предел посредством вывода AREF и функции analogReference()."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Дополнительная пара выводов платформы:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="  •AREF. Опорное напряжение для аналоговых входов. Используется с функцией analogReference().
+\n  •Reset. Низкий уровень сигнала на выводе перезагружает микроконтроллер. Обычно применяется для подключения кнопки перезагрузки на плате расширения, закрывающей доступ к кнопке на самой плате Arduino."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Токовая защита разъема USB"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="В Arduino Mega встроена перезагружаемая плавкая вставка, защищающая порт USB компьютера от токов короткого замыкания и сверхтоков. Хотя практически все компьютеры имеют подобную защиту, тем не менее, данный предохранитель обеспечивает дополнительный барьер. Предохранитель автоматически прерывает обмен данных при прохождении тока более 500 мА через USB порт."/>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Реле"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/buyRele"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buyRele"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Рано или поздно появляется желание поуправлять чем-то более мощным чем светодиод, либо создать нечто на подобие умного дома своими руками. В этом нам поможет такая радио деталь как реле. В данной статье рассмотрим как реле подключается к микроконтроллеру, как им управлять, а также устроим демонстрацию его работы на примере включения лампы накаливания."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Устройство и принцип работы реле"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Реле управляется напряжением 5V и способно коммутировать до 10А 30V DC и 10A 250V AC."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Реле имеет две раздельных цепи: цепь управления, представленная контактами А1, А2  и управляемая цепь, контакты 1, 2, 3. Цепи никак не связаны между собой."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Между контактами А1 и А2 установлен металлический сердечник, при протекании тока по которому к нему притягивается подвижный якорь(2). Контакты же 1 и 3 неподвижны. Стоит отметить что якорь подпружинен и пока мы не пропустим ток через сердечник, якорь будет удерживается прижатым к контакту 3. При подаче тока, как уже говорилось, сердечник превращается в электромагнит и притягивается к контакту 1. При обесточивании пружина снова возвращает якорь к контакту 3."/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/releschema"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Подключение модуля к Arduino"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="В большинстве реле модулей для Ардуино используется N-канальное управление, его мы и рассмотрим. Для примера возьмем одноканальный модуль."/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/releyka"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Модуль имеет 3 вывода (стандарта 2.54мм):"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  VCC: &quot;+&quot; питания
+\n
+\n  GND: &quot;-&quot; питания
+\n
+\n  IN: вывод входного сигнала"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Подключение модуля предельно просто: "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  VCC на + 5 вольт на Ардуино.
+\n
+\n    GND на любой из GND пинов ардуино.
+\n
+\n    IN на любой из цифровых входов/выходов ардуино (в примерах подсоединено к 4)."/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/releconnect"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Переходим непосредственно к скетчу. В данном примере реле будет включаться и выключаться с интервалом в 2 секунды."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="// Реле модуль подключен к цифровому выводу 4
+\nint Relay = 4;
+\n
+\nvoid setup() {
+\n  pinMode(Relay, OUTPUT);
+\n}
+\n
+\nvoid loop() {
+\n  digitalWrite(Relay, LOW);   // реле включено
+\n  delay(2000);
+\n  digitalWrite(Relay, HIGH);  // реле выключено
+\n  delay(2000);
+\n}
+"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Для подключения лампы накаливания следует поставить реле в разрыв одного из проводов."/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/relerazriv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="На нашем модуле контакты 1, 2, 3 расположены таким образом. Для подключения лампы накаливания следует поставить реле в разрыв одного из проводов."/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/relelampochka"/>
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="DHT11/DHT22"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/buyDHT11"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buyDHT11"/>
+        <TextView
+            android:id="@+id/buyDHT22"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buyDHT22"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/dht1122"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Чем отличаются датчики DHT11 и DHT22?"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Две версии сенсоров DHT похожи друг на друга и имеют одинаковую распиновку. Их отличия в характеристиках. Спецификации:"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Сенсор DHT11:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  •Определение влажности в диапозоне 20-80%
+\n  •Определение температуры от 0°C до +50°C
+\n  •Частота опроса 1 раз в секунду"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Сенсор DHT22:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  •Определение влажности в диапазоне 0-100%
+\n  •Определение температуры от -40°C до +125°C
+\n  •Частота опроса 1 раз в 2 секунды"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Таким образом, характеристики датчика DHT22 лучше по сравнению с DHT11, и поэтому он чуть-чуть дороже. Снимать показания чаще, чем раз в 1-2 секунды не получится, но, возможно, для вашего проекта более высокое быстродействие и не требуется."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Подключение сенсоров DHT к Arduino"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Датчики DHT имеют стандартные выводы и их просто установить на breadboard."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Датчики DHT имеют 4 вывода:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="1.Питание
+\n2.Вывод данных
+\n3.Не используется.
+\n4.GND (земля)."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Между выводами питания и вывода данных нужно разместить резистор номиналом 10 кОм."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Датчик DHT часто продается в виде готового модуля. В этом случае он имеет три вывода и подключается без резистора, т.к. резистор уже есть на плате."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Схема подключения датчика с резистором:"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/dhtconnect"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Arduino скетч"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:text="Воспользуемся библиотекой DHT.h, созданной специально для датчиков DHT. Ее можно скачать "/>
+            <TextView
+                android:id="@+id/downloadLibForDHT"
+                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/downloadLibDHT"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="#include &quot;DHT.h&quot;
+\n
+\n#define DHTPIN 2 // номер пина, к которому подсоединен датчик
+\n
+\n// Раскомментируйте в соответствии с используемым датчиком
+\n
+\n// Инициируем датчик
+\n
+\nDHT dht(DHTPIN, DHT22);
+\n
+\n//DHT dht(DHTPIN, DHT11);
+\n
+\nvoid setup(){
+\n
+\nSerial.begin(9600);
+\n
+\ndht.begin();
+\n
+\n}
+\n
+\nvoid loop() {
+\n
+\n// Задержка 2 секунды между измерениями
+\n
+\ndelay(2000);
+\n
+\n//Считываем влажность
+\n
+\nfloat h = dht.readHumidity();
+\n
+\n// Считываем температуру
+\n
+\nfloat t = dht.readTemperature();
+\n
+\n// Проверка удачно прошло ли считывание.
+\n
+\nif (isnan(h) || isnan(t)) {
+\n
+\nSerial.println(&quot;Не удается считать показания&quot;);
+\n
+\nreturn;
+\n
+\n}
+\n
+\nSerial.print(&quot;Влажность: &quot;+h+&quot; %\t&quot;+&quot;Температура: &quot;+t+&quot; *C &quot;);
+\n
+\n}
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Загрузите скетч в контроллер и проверьте правильность работы при помощи Монитора порта"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/monitor"/>
+
+        
+
+
+
+    </LinearLayout>
+</ScrollView>

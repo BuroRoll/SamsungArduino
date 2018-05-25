@@ -80,9 +80,39 @@ public class FragmentModuls extends Fragment {
         public void onClick(View v) {
             switch(getPosition()){
                 case 0:
-                    Intent intent = new Intent(getActivity(), Item0Activity.class);
-                    intent.putExtra("key","zero");
-                    startActivity(intent);
+                    Intent intent0 = new Intent(getActivity(), Item0Activity.class);
+                    intent0.putExtra("key","zero");
+                    startActivity(intent0);
+                    break;
+                case 1:
+                    Intent intent1 = new Intent(getActivity(), Item0Activity.class);
+                    intent1.putExtra("key", "first");
+                    startActivity(intent1);
+                    break;
+                case 2:
+                    Intent intent2 = new Intent(getActivity(), Item0Activity.class);
+                    intent2.putExtra("key", "second");
+                    startActivity(intent2);
+                    break;
+                case 3:
+                    Intent intent3 = new Intent(getActivity(), Item0Activity.class);
+                    intent3.putExtra("key", "three");
+                    startActivity(intent3);
+                    break;
+                case 4:
+                     Intent intent4 = new Intent(getActivity(), Item0Activity.class);
+                     intent4.putExtra("key", "four");
+                     startActivity(intent4);
+                     break;
+                case 5:
+                    Intent intent5 = new Intent(getActivity(), Item0Activity.class);
+                    intent5.putExtra("key", "five");
+                    startActivity(intent5);
+                    break;
+                case 6:
+                    Intent intent6 = new Intent(getActivity(), Item0Activity.class);
+                    intent6.putExtra("key", "six");
+                    startActivity(intent6);
                     break;
             }
         }

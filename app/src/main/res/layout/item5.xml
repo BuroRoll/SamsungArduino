@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="LCD 1602"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/buyLCD"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buyLCD"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="LCD дисплеи размерности 1602, на базе контроллера HD44780, являются одними из самых простых, доступных и востребованных дисплеев для разработки различных электронных устройств. Его можно встретить как и в устройствах собранных на коленке, так и в промышленных устройствах, таких, как например, автоматы для приготовления кофе. "/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/lcdconnect"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Подключение:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/lcdpins"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Этот способ подключения работает только со специально библиотекой, скачать библиотеку можно "/>
+
+        <TextView
+            android:id="@+id/downloadLibForLCD"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/downloadLibLCD"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Код программы:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="#include &lt;Wire.h&gt;
+\n#include &lt;LiquidCrystal_I2C.h&gt;
+\nLiquidCrystal_I2C lcd(0x27,16,2);  // Устанавливаем дисплей
+\nvoid setup()
+\n{
+\n  lcd.init();
+\n  lcd.backlight();// Включаем подсветку дисплея
+\n  lcd.print(&quot;Arduino&quot;);
+\n  lcd.setCursor(8, 1);
+\n  lcd.print(&quot;LCD 1602&quot;);
+\n        }
+\n        void loop()
+\n        {
+\n        // Устанавливаем курсор на вторую строку и нулевой символ.
+\n        lcd.setCursor(0, 1);
+\n        // Выводим на экран количество секунд с момента запуска ардуины
+\n        lcd.print(millis()/1000);
+\n        }"/>
+
+    </LinearLayout>
+</ScrollView>

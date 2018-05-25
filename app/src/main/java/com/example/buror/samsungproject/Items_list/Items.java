@@ -11,19 +11,19 @@ public class Items {
             "Arduino Uno",
             "Arduino Nano",
             "Arduino Mega",
-            "DHT11",
+            "DHT11/DHT22",
             "Реле",
             "LCD Дисплей 16x2",
-            "Сервопривод",
+            "Bluetooth HC-05",
     };
     public static String[] price = new String[]{
             "3,8$",
             "2$",
-            "4$",
+            "7$",
+            "1$-3$",
             "1$",
-            "1$",
-            "1,5$",
-            "2$",
+            "2,5$",
+            "3,4$",
     };
     public static Integer[] pictures = new Integer[]{
             R.drawable.uno,
@@ -32,6 +32,6 @@ public class Items {
             R.drawable.dht11,
             R.drawable.rele,
             R.drawable.display,
-            R.drawable.servo,
+            R.drawable.bth,
     };
 }

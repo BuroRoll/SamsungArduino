@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="Bluetooth модуль HC-05"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/buyBluetooth"
+            android:textSize="15dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buyBluetooth"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/bth"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Сейчас мы разберем простые примеры как можно подключить Bluetooth модуль к Arduino и настроить дистанционное управление с телефона."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Подключение:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/bthconnect"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Будьте внимательны, подключать подключать нужно TX -> RXD ,RX -> TXD."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Теперь необходимо записать пробный код программы:
+\n
+\nВо время загрузки скетча необходимо что бы Bluetooth модуль был отключен от микроконтроллера arduino. В противном случае скетч не запишется, потому что связь с Bluetooth модулем происходит по одному и томуже порту RX и TX, что и USB."/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/blue"
+            android:text="int val;
+\nint LED = 13;
+\nvoid setup(){
+\n  Serial.begin(9600);
+\n  pinMode(LED, OUTPUT);
+\n  digitalWrite(LED, HIGH);
+\n}
+\nvoid loop(){
+\n  if (Serial.available()){
+\n    val = Serial.read();
+\n    // При символе &quot;1&quot; включаем светодиод
+\n        if (val == '1'){
+\n        digitalWrite(LED, HIGH);
+\n        }
+\n        // При символе &quot;0&quot; выключаем светодиод
+\n        if ( val == '0'){
+\n        digitalWrite(LED, LOW);
+\n        }
+\n   }
+\n}
+"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="После того как скетч записан и Bluetooth модуль подключен к Arduino, можно перейти к следующему шагу."/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Теперь вы можете воспользоваться разделом приложения &quot;Управление Arduino&quot;, предварительно подключившись к вашему модулю, чтобы отправлять команды на ваш контроллер" />
+
+
+
+    </LinearLayout>
+</ScrollView>
