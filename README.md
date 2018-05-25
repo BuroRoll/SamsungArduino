@@ -1,5 +1,7 @@
 # SamsungArduino
 
+# Dependencies
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //noinspection GradleCompatible
