@@ -1,6 +1,6 @@
 # SamsungArduino
 
-implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:27.1.1'
