@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "203152905564-18su8jpcpjfv7ebm071pue17a0ecu5mv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buror.samsungproject",
+            "certificate_hash": "53628c2354fc5a2527828a9b2e051ed90f078e67"
+          }
+        },
+        {
           "client_id": "203152905564-qvstj4v552mbiv4u3pgcsp7ok2p31p05.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -29,6 +37,10 @@
             "package_name": "com.example.buror.samsungproject",
             "certificate_hash": "9dc81af99407d81fae475557979b8b8eaa1b2fe1"
           }
+        },
+        {
+          "client_id": "203152905564-59fekjhj66hqjlud8hn65eg7jncl81r9.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "203152905564-59fekjhj66hqjlud8hn65eg7jncl81r9.apps.googleusercontent.com",

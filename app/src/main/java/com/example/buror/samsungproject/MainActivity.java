@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     IDEActivity fide;
     String te;
     BluetoothAdapter bluetooth;
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,8 +93,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -105,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(setting);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -166,8 +162,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Log.d("Commit Error", "onNavigationItemSelected: " + e.getMessage());
             }
         }
-
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

@@ -18,10 +18,14 @@ import android.widget.TextView;
 import com.example.buror.samsungproject.Books_lists.Book0Activity;
 import com.example.buror.samsungproject.Books_lists.Books;
 import com.example.buror.samsungproject.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 //TODO: Добавить кликабельности на страницы
 public class FragmentBook extends Fragment {
     public FragmentBook() {}
+    private AdView mAdView;
 
     @Nullable
     @Override
@@ -32,6 +36,12 @@ public class FragmentBook extends Fragment {
         recyclerView.setAdapter(listAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
+        MobileAds.initialize(getActivity(),
+                "ca-app-pub-2406878860777073/2323998984");
+
+        mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         return view;
     }
 

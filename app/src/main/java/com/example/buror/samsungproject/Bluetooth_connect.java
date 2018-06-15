@@ -44,9 +44,7 @@ public class Bluetooth_connect extends AppCompatActivity implements SwipeRefresh
                 onBackPressed();
             }
         });
-
         onRefresh();
-
     }
 
     @Override
@@ -67,18 +65,15 @@ public class Bluetooth_connect extends AppCompatActivity implements SwipeRefresh
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, 1);
         }
-
         for(BluetoothDevice bt : pairedDevices){
-
             mDeviceName.add(bt.getName());
             mDeviceAdress.add(bt.getAddress());
             Log.d("TAG", "onCreate Name: " + bt.getName());
             Log.d("TAG", "onCreate Address: " + bt.getAddress());
             Log.d("TAG", "onCreate2222: " + mDeviceName.size());
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, mDeviceName); //android.
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, mDeviceName);
             listView.setAdapter(adapter);
             listView.getDividerHeight();
         }
-
     }
 }

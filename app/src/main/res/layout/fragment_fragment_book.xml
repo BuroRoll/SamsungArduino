@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.buror.samsungproject.Books_lists.Book1Activity">
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.buror.samsungproject.Books_lists.Book0Activity">
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2406878860777073/2323998984"></com.google.android.gms.ads.AdView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
@@ -11,7 +22,8 @@
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
-</android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>
 
 
 

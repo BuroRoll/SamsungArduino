@@ -6,11 +6,16 @@ import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import com.example.buror.samsungproject.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.r0adkll.slidr.Slidr;
 
 
 
 public class Book0Activity extends AppCompatActivity {
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +25,12 @@ public class Book0Activity extends AppCompatActivity {
             case "zero":
                 setContentView(R.layout.book0);
                 Slidr.attach(this);
+                MobileAds.initialize(this,
+                        "ca-app-pub-2406878860777073/2323998984");
+
+                mAdView = findViewById(R.id.adView);
+                AdRequest adRequest = new AdRequest.Builder().build();
+                mAdView.loadAd(adRequest);
                 break;
             case "one":
                 setContentView(R.layout.book1);
