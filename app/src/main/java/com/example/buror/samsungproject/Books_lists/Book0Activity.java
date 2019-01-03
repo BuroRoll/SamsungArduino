@@ -25,12 +25,12 @@ public class Book0Activity extends AppCompatActivity {
             case "zero":
                 setContentView(R.layout.book0);
                 Slidr.attach(this);
-                MobileAds.initialize(this,
-                        "ca-app-pub-2406878860777073/2323998984");
-
-                mAdView = findViewById(R.id.adView);
-                AdRequest adRequest = new AdRequest.Builder().build();
-                mAdView.loadAd(adRequest);
+//                MobileAds.initialize(this,
+//                        "ca-app-pub-2406878860777073/2323998984");
+//
+//                mAdView = findViewById(R.id.adView);
+                //AdRequest adRequest = new AdRequest.Builder().build();
+                //mAdView.loadAd(adRequest);
                 break;
             case "one":
                 setContentView(R.layout.book1);

@@ -41,17 +41,10 @@ public class IDEActivity extends AppCompatActivity {
         final CodeHelper cHelp = new CodeHelper(getApplicationContext());
         final int key = 1;
 
-
-
-
-
         rv = findViewById(R.id.recycler_view11);
         rv.setLayoutManager(new LinearLayoutManager(this)); // устанавливаем разметку для списка.
         rv.setItemAnimator(new DefaultItemAnimator()); //устанавливаем класс, отвечающий за анимации в списке
         rv.setAdapter(new RVAdapter(cHelp.getAll(), this)); //устанавливаем наш адаптер
-
-
-
 
         FloatingActionButton fab = findViewById(R.id.fab);  //кнопка
         fab.setOnClickListener(new View.OnClickListener() {

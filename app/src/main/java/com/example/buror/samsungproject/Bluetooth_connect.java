@@ -29,7 +29,7 @@ public class Bluetooth_connect extends AppCompatActivity implements SwipeRefresh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bluetooth_connect);
-        btn = findViewById(R.id.button2);
+        //btn = findViewById(R.id.button2);
         listView = findViewById(R.id.list);
 
         mSwipeRefreshLayout = findViewById(R.id.swipe_container);

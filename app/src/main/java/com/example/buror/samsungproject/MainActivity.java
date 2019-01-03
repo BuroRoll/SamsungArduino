@@ -2,7 +2,6 @@ package com.example.buror.samsungproject;
 
 import android.app.FragmentTransaction;
 import android.bluetooth.*;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -19,14 +18,11 @@ import android.view.MenuItem;
 import com.example.buror.samsungproject.Chat.ChatActivity;
 import com.example.buror.samsungproject.FeedBack.FeedBack;
 import com.example.buror.samsungproject.IDE.IDEActivity;
-import com.example.buror.samsungproject.Items_list.Item0Activity;
 import com.example.buror.samsungproject.Projects.Fragment1;
 import com.example.buror.samsungproject.fragments.FragmentBook;
 import com.example.buror.samsungproject.fragments.FragmentChat;
 import com.example.buror.samsungproject.fragments.FragmentControl;
 import com.example.buror.samsungproject.fragments.FragmentModuls;
-
-import me.aflak.bluetooth.Bluetooth;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentChat fragchat;
     FragmentControl fcontrol;
     Fragment1 fragment1;
-    IDEActivity fide;
     String te;
     BluetoothAdapter bluetooth;
     
@@ -46,13 +41,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         bluetooth = BluetoothAdapter.getDefaultAdapter();
-
-        if (bluetooth.isEnabled()) {}
-        else
-        {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, 1);
-        }
 
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
@@ -70,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmoduls = new FragmentModuls();
         fcontrol = new FragmentControl();
         fragment1 = new Fragment1();
-        fide = new IDEActivity();
 
         FragmentTransaction ftranse = getFragmentManager().beginTransaction();
         ftranse.replace(R.id.container, fragbook);
@@ -139,8 +126,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Log.d("Start Control", "onNavigationItemSelected: " + e.getMessage());
                 }
             }
-
-
         } else if (id == R.id.nav_ide) {
             Intent intent = new Intent(this, IDEActivity.class);
             startActivityForResult(intent, 1);
